@@ -18,11 +18,10 @@ body {
     width: 90%;
 }
 
-#navbg{
-    backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, 0.713);
+#navbg {
+  background: rgba(30, 40, 80, 0.8); /* semi-transparent */
+  backdrop-filter: blur(5px);
 }
-
 a{
     color:white;
     text-decoration: none;
@@ -43,4 +42,10 @@ section.hero {
     width: 55%;
     height:85%;
     border-radius: 10px;
+}
+
+
+button:hover {
+  color: #ffc107; /* golden hover */
+  transition: color 0.3s;
 }
