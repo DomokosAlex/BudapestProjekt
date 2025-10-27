@@ -7,7 +7,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Kanit";
-  background: linear-gradient(#1e49c9, rgb(19, 22, 24)) no-repeat;
+  background: linear-gradient(#4170fa, rgb(10, 11, 12)) no-repeat;
+  /* background: linear-gradient(#aec6cf, #1e49c9) no-repeat;*/
   background-size: cover;
 
 }
@@ -28,6 +29,7 @@ a{
 }
 section.hero {
   height: 100vh;
+  
 
 }
 
@@ -42,10 +44,4 @@ section.hero {
     width: 55%;
     height:85%;
     border-radius: 10px;
-}
-
-
-button:hover {
-  color: #ffc107; /* golden hover */
-  transition: color 0.3s;
 }
