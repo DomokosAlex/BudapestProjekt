@@ -85,12 +85,15 @@ function Kovetkezo() {
     adat.megcsinalta = true;
     kitoltes_eredmeny[adat.sorszam] = adat.valaszok[valIndex];
 
-    if (index < kerdesek.length - 1 && Object.keys(kitoltes_eredmeny).length <= kerdesek.length - 1) {
-    index++;
-    Betoltes(index);
-} else {
-    Befejezes();
-}
+    
+    if(index == kerdesek.length - 1 && kerdesek.every(n=> n.megcsinalta)){
+        Befejezes();
+    }
+    else if (index < kerdesek.length - 1 ) {
+        index++;
+        Betoltes(index);
+    } 
+    else{alert("Kérem töltse ki a tesztet, mert igy nem lehet beküldeni!")}
 }
 
 function Elozo() {
@@ -102,7 +105,7 @@ function Elozo() {
 function Befejezes() {
     console.log("Kitöltés eredménye:", kitoltes_eredmeny);
 
-
+    sendResultsToBackend();
     
     const oldal = document.getElementById("Kerdesek");
     oldal.innerHTML = `
@@ -122,4 +125,18 @@ function Befejezes() {
         </div>
     `;
 
+}
+
+
+function sendResultsToBackend() {
+    fetch('http://localhost:3000/kerdoiv', { // replace with your backend URL
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(kitoltes_eredmeny)
+    })
+    .then(res => res.json())
+    .then(data => console.log('Backend response:', data))
+    .catch(err => console.error('Error sending results:', err));
 }

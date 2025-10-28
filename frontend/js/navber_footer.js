@@ -15,7 +15,7 @@ nav.innerHTML=`
                                     class="btn btn-outline-primary btn-lg text-white">Ajánlás</button></a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html"><button
                                     class="btn btn-outline-primary btn-lg text-white">Főoldal</button></a></li>
-                        <li class="nav-item"><a class="nav-link" href="kerdoiv.html"><button
+                        <li class="nav-item"><a class="nav-link" href="/html/kerdoiv.html"><button
                                     class="btn btn-outline-primary btn-lg text-white">Kérdőív</button></a></li>
                         <li class="nav-item"><a class="nav-link" href="#"><button
                                     class="btn btn-outline-primary btn-lg text-white">Statisztika</button></a></li>

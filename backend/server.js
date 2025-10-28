@@ -1,12 +1,12 @@
 const express = require('express');
-const mysql = require('mysql2');
+const path = require('path');
 const bodyParser = require('body-parser');
-const cors = require('cors');
-
-
 const app = express();
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
+const mysql = require('mysql2');
+
+
+app.use(bodyParser.json());
+
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -16,12 +16,18 @@ const connection = mysql.createConnection({
 });
 
 
-//add
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 
+app.post('/kerdoiv', (req, res) => {
+    console.log('Received quiz results:', req.body);
+    res.json({ status: 'ok' });
 
-
-
-app.listen(3000, () => {
-    console.log('Szerver fut a http://localhost:3000 címen');
 });
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/html/index.html'));
+});
+
+
+app.listen(3000, () => console.log('Server running on http://localhost:3000'));
