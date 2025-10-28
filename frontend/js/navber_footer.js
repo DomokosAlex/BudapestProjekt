@@ -25,3 +25,34 @@ nav.innerHTML=`
             </div>
         </nav>
 `
+
+
+const foot = document.getElementById("Footer");
+foot.innerHTML=`<div class="row p-2 text-white">
+
+            <div class="col-sm-12 col-md-4 ">
+                <i>
+                    <h3 class="my-3">Elérhetőségek:</h3>
+                </i>
+                <p><a href="https://github.com/DomokosAlex"><i class="bi bi-github"></i> Github</a></p>
+                <p><a href="https://github.com/KovacsMilan12454848"><i class="bi bi-github"></i> Github</a></p>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <i>
+                    <h3 class="my-3">Készitette: </h3>
+                </i>
+                <p><i class="bi bi-code-slash"></i> Domokos Alex</p>
+                <p><i class="bi bi-code-slash"></i> Kovács Milán</p>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <i>
+                    <h3 class="my-3">Fontosabb források:</h3>
+                </i>
+                <p><a href="https://pubmed.ncbi.nlm.nih.gov/"><i class="bi bi-book"></i> pubmed</a></p>
+                <p><a href="https://www.code4you.hu/wp-login.php?redirect_to=%2F"><i class="bi bi-journal-code"></i></i>
+                        Code4You</a></p>
+            </div>
+
+        </div>`

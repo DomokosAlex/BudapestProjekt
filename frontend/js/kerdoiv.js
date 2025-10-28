@@ -22,17 +22,16 @@ const kerd = new Kerdoiv();
 
 
 
-kerd.Felpakolas(1, "kerd1", ["Igen", "Nem", "Meglehet"], false)
-kerd.Felpakolas(2, "kerd2", ["Igen", "Nem", "Meglehet"], false)
-kerd.Felpakolas(3, "kerd3", ["Igen", "Nem", "Meglehet"], false)
-/*kerd.Felpakolas(4, "kerd4", ["Igen", "Nem", "Meglehet"], false)
-kerd.Felpakolas(5, "kerd5", ["Igen", "Nem", "Meglehet"], false)
-kerd.Felpakolas(6, "kerd6", ["Igen", "Nem", "Meglehet"], false)
-kerd.Felpakolas(7, "kerd7", ["Igen", "Nem", "Meglehet"], false)
-kerd.Felpakolas(8, "kerd8", ["Igen", "Nem", "Meglehet"], false)
-kerd.Felpakolas(9, "kerd9", ["Igen", "Nem", "Meglehet"], false)
-kerd.Felpakolas(10, "kerd10", ["Igen", "Nem", "Meglehet"], false)
-*/
+kerd.Felpakolas(1, "Ismeri már az L-glicinről?", ["Igen", "Nem", "Meglehet"], false)
+kerd.Felpakolas(2, "Mi a korosztáya?", ["15-25", "26-35", "36-50","50+"], false)
+kerd.Felpakolas(3, "Egészségügyi állapota?", ["Egészséges","általában betegeskedem", "Tartós betegségem van"], false)
+kerd.Felpakolas(4, "Milyen nemzetiségü?", ["Magyar", "Kisebbség", "Egyéb"], false)
+kerd.Felpakolas(5, "Milyen településen lakik?", ["Nagyváros", "Város", "Falu"], false)
+kerd.Felpakolas(6, "Honnan halott az L-glicinről?", ["Családzól", "Ismerősöktől", "Közöségi médiaban","Orvostól"], false)
+kerd.Felpakolas(7, "Milyen végzettséggel rendelkezik?", ["Éretségivel", "Egyetemi", "általános"], false)
+kerd.Felpakolas(8, "Szed-e bármilyen gyógyszert állandó szinten", ["Igen, szedek", "Nem, nemszedek "], false)
+kerd.Felpakolas(9, "Mi a neme?", ["Férfi", "Nő", "Nem akarom megadni"], false)
+
 var index = 1;
 
 window.addEventListener('load', function () {
@@ -59,6 +58,7 @@ function Betoltes(i) {
 
     oldal.innerHTML = `
     <h1 class="mt-4 p3 text-center" >${adat.kerdes} </h1>
+    <hr>
     <form id="Form" class="p-3 g-3"> </form>`
 
     Valasz_lehetosegek(adat);
@@ -72,7 +72,7 @@ function Betoltes(i) {
         <button type="button" class="btn btn-secondary btn-lg" id="btn" onclick="Elozo()">Előző</button>
         <button type="button"  class="btn btn-success btn-lg"  id="kov" onclick="Kovetkezo()">${szoveg}</button>
     </div>
-    <div class="text-center" id="helyzet"></div> `;
+    <div class="   text-center " id="helyzet"></div> `;
 
 
 
@@ -102,11 +102,11 @@ function Gombok() {
     helyzet.innerHTML = "";
     for (const x of kerd.kerdesek) {
         if (x.Id == index) {
-            helyzet.innerHTML += `<button class="btn btn-success" onclick="ugras(${x.Id})">${x.Id}</button>`;
+            helyzet.innerHTML += `<button class="btn m-1 p-2  col-1 btn-success" onclick="ugras(${x.Id})">${x.Id}</button>`;
         } else if (x.megcsinalta) {
-            helyzet.innerHTML += `<button class="btn btn-secondary" onclick="ugras(${x.Id})">${x.Id}</button>`;
+            helyzet.innerHTML += `<button class="btn m-1 p-2  col-1 btn-secondary" onclick="ugras(${x.Id})">${x.Id}</button>`;
         } else {
-            helyzet.innerHTML += `<button class="btn btn-warning" onclick="ugras(${x.Id})">${x.Id}</button>`;
+            helyzet.innerHTML += `<button class="btn m-1 p-2  col-1 btn-warning" onclick="ugras(${x.Id})">${x.Id}</button>`;
         }
 
     }
