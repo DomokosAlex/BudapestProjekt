@@ -7,17 +7,83 @@ class Kerdes {
     }
 }
 
-
 const kerdesek = [
-    new Kerdes(1, "Ismeri már az L-glicinről?", ["Igen","Nem","Meglehet"]),
-    new Kerdes(2, "Mi a korosztáya?", ["15-25","26-35","36-50","50+"]),
-    new Kerdes(3, "Egészségügyi állapota?", ["Egészséges","általában betegeskedem","Tartós betegségem van"])
+
+    new Kerdes(1, "Hallott-e már a glicinről?", [
+        "Igen, és tudom, mire való",
+        "Igen, de nem tudom pontosan",
+        "Nem, még soha nem hallottam",
+        "Először az oldalunkon hallok róla"
+    ], false),
+
+    new Kerdes(2, "Ha hallott róla, honnan szerezte az információt?", [
+        "Orvostól, dietetikustól",
+        "Egészségügyi / tudományos oldalról",
+        "Baráttól, ismerőstől",
+        "Közösségi médiából / fórumokról",
+        "Egyéb / nem tudom"
+    ], false),
+
+    
+    new Kerdes(3, "Milyen nemzetiségű?", [
+        "Magyar",
+        "Szomszédos ország (pl. Román, Szlovák, Ukrán, Szerb)",
+        "Egyéb"
+    ], false),
+
+    
+    new Kerdes(4, "Hol él jelenleg?", [
+        "Magyarország",
+        "Szomszédos ország (pl. Románia, Szlovákia, Ukrajna, Szerbia)",
+        "Más, távolabbi ország"
+    ], false),
+
+    
+    new Kerdes(5, "Mi a neme?", [
+        "Férfi",
+        "Nő",
+        "Egyéb"
+    ], false),
+
+
+    new Kerdes(6, "Milyen jellegű településen él?", [
+        "Nagyváros / városközpont",
+        "Külváros",
+        "Kisváros",
+        "Vidék / falu"
+    ], false),
+
+
+    new Kerdes(7, "Milyen korosztályba tartozik?", [
+        "18 év alatti",
+        "18–25 év",
+        "26–35 év",
+        "36–45 év",
+        "46–60 év",
+        "61 év felett"
+    ], false),
+
+    
+    new Kerdes(8, "Hogyan jellemezné az egészségi állapotát?", [
+        "Kiváló",
+        "Jó",
+        "Közepes",
+        "Rossz",
+        "Nagyon rossz"
+    ], false),
+
+    new Kerdes(9, "Mi a legmagasabb iskolai végzettsége?", [
+        "Általános iskola",
+        "Középiskola / érettségi",
+        "Felsőfokú szakképzés",
+        "Egyetem / főiskola",
+        "Posztgraduális / MSc / PhD"
+    ], false)
 ];
 
 
 let index = 0;
 const kitoltes_eredmeny = {}; 
-
 
 window.addEventListener("load", function(){{
     Betoltes(index);
@@ -129,7 +195,7 @@ function Befejezes() {
 
 
 function sendResultsToBackend() {
-    fetch('http://localhost:3000/kerdoiv', { // replace with your backend URL
+    fetch('http://localhost:3000/kerdoiv', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
