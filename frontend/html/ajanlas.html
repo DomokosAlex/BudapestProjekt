@@ -1,11 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=M+PLUS+1p&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <title>Glicinhub_Ajanlas</title>
+
+
 </head>
+
 <body>
-    
+
+
+    <header class="text-white text-center sticky-top" id="Nav"></header>
+
+
+
+    <main class="container-fluid text-white">
+        <section class="hero p-5" id="Kerdesek">
+
+
+        </section>
+ <section class=" text-center p-5">
+
+            <h2 >Már kitöltött teszt eredményének kimutatása: </h2>
+            
+                <label name="kod" class="h4">irja be kitöltéskor megadott kódot:
+                     <input type="text" id="kod" placeholder="Add meg az ID-t"></label>
+                <button id="lekeres" class="btn btn-success">Lekérés</button>
+               
+ </section>
+        
+        <section id="resultArea"></section>
+    </main>
+
+
+    <footer class="bg-dark container-fluid text-center p-3" id="Footer"></footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/ajanlas.js"></script>
+    <script src="../js/navber_footer.js"></script>
+
 </body>
+
 </html>

@@ -30,7 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `ajanlas` (
   `id` int(11) NOT NULL,
   `kod` varchar(20) DEFAULT NULL,
-  `eredmeny` varchar(50) DEFAULT NULL
+  `szazalek` varchar(50) DEFAULT NULL,
+  `tanacs` varchar(50) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `bmi` int(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

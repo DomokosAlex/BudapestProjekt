@@ -2,8 +2,8 @@ class Kerdes {
     constructor(sorszam, szoveg, valaszok) {
         this.sorszam = sorszam;
         this.szoveg = szoveg;
-        this.valaszok = valaszok; 
-        this.megcsinalta = false; 
+        this.valaszok = valaszok;
+        this.megcsinalta = false;
     }
 }
 
@@ -24,21 +24,21 @@ const kerdesek = [
         "Egyéb / nem tudom"
     ], false),
 
-    
+
     new Kerdes(3, "Milyen nemzetiségű?", [
         "Magyar",
         "Szomszédos ország (pl. Román, Szlovák, Ukrán, Szerb)",
         "Egyéb"
     ], false),
 
-    
+
     new Kerdes(4, "Hol él jelenleg?", [
         "Magyarország",
         "Szomszédos ország (pl. Románia, Szlovákia, Ukrajna, Szerbia)",
         "Más, távolabbi ország"
     ], false),
 
-    
+
     new Kerdes(5, "Mi a neme?", [
         "Férfi",
         "Nő",
@@ -63,7 +63,7 @@ const kerdesek = [
         "61 év felett"
     ], false),
 
-    
+
     new Kerdes(8, "Hogyan jellemezné az egészségi állapotát?", [
         "Kiváló",
         "Jó",
@@ -83,11 +83,13 @@ const kerdesek = [
 
 
 let index = 0;
-const kitoltes_eredmeny = {}; 
+const kitoltes_eredmeny = {};
 
-window.addEventListener("load", function(){{
-    Betoltes(index);
-}})
+window.addEventListener("load", function () {
+    {
+        Betoltes(index);
+    }
+})
 
 
 function Betoltes(i) {
@@ -151,15 +153,15 @@ function Kovetkezo() {
     adat.megcsinalta = true;
     kitoltes_eredmeny[adat.sorszam] = adat.valaszok[valIndex];
 
-    
-    if(index == kerdesek.length - 1 && kerdesek.every(n=> n.megcsinalta)){
+
+    if (index == kerdesek.length - 1 && kerdesek.every(n => n.megcsinalta)) {
         Befejezes();
     }
-    else if (index < kerdesek.length - 1 ) {
+    else if (index < kerdesek.length - 1) {
         index++;
         Betoltes(index);
-    } 
-    else{alert("Kérem töltse ki a tesztet, mert igy nem lehet beküldeni!")}
+    }
+    else { alert("Kérem töltse ki a tesztet, mert igy nem lehet beküldeni!") }
 }
 
 function Elozo() {
@@ -172,7 +174,7 @@ function Befejezes() {
     console.log("Kitöltés eredménye:", kitoltes_eredmeny);
 
     sendResultsToBackend();
-    
+
     const oldal = document.getElementById("Kerdesek");
     oldal.innerHTML = `
         <h1 class="mt-4 p3 text-center">Köszönjük, hogy kitöltötte a tesztet!</h1>
@@ -195,14 +197,14 @@ function Befejezes() {
 
 
 function sendResultsToBackend() {
-    fetch('http://localhost:3000/kerdoiv', { 
+    fetch('http://localhost:3000/kerdoiv', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(kitoltes_eredmeny)
     })
-    .then(res => res.json())
-    .then(data => console.log('Backend response:', data))
-    .catch(err => console.error('Error sending results:', err));
+        .then(res => res.json())
+        .then(data => console.log('Backend response:', data))
+        .catch(err => console.error('Error sending results:', err));
 }
