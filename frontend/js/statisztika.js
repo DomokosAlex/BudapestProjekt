@@ -40,6 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 type: 'pie',
                 data: {
                     labels: Object.keys(adatok[felirat[i]]),
+                    
                     datasets: [{
                         label: '# of Votes',
                         data: Object.values(adatok[felirat[i]]),
@@ -47,6 +48,16 @@ window.addEventListener("DOMContentLoaded", () => {
                 },
                 options: {
                     responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'white', // jelmagyarázat színe
+                                font: {
+                                    size: 20
+                                }
+                            }
+                        }
+                    }
                 }
             });
 
@@ -96,3 +107,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
     fetchAdat();
 });
+
+

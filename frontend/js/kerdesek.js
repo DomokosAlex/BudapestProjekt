@@ -14,7 +14,7 @@ const kerdesek = [
         "Igen, és tudom, mire való",
         "Igen, de nem tudom pontosan",
         "Nem, még soha nem hallottam",
-        "Először az oldalunkon hallok róla"
+        "Először az oldalunkon olvastam róla"
     ], false, "Halott-e"),
 
     new Kerdes(2, "Ha hallott róla, honnan szerezte az információt?", [
@@ -80,6 +80,6 @@ const kerdesek = [
         "Középiskola / érettségi",
         "Felsőfokú szakképzés",
         "Egyetem / főiskola",
-        "Posztgraduális / MSc / PhD"
+        "Posztgraduális"
     ], false, "Végzettség")
 ];

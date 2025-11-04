@@ -15,7 +15,7 @@ const Kalkulator_adat = [
     new Kalkulator(3, "Hogyan gyógyulnak a sebeid/karcolások?", [{ ker: "Lassan (hetek)", ert: 0 }, { ker: "Normál", ert: 1 }, { ker: "Gyorsan (napok)", ert: 3 }], 1),
     new Kalkulator(4, "Tapasztalsz-e ízületi/izomfájdalmat?", [{ ker: "Gyakran tapasztalok", ert: 0 }, { ker: "Néha tapasztalok ", ert: 1 }, { ker: "Ritkán tapasztalok ", ert: 3 },{ ker: "Nem tapasztalok ", ert: 3 }], 1),
     new Kalkulator(5, "Milyen az alvásminőséged?", [{ ker: "Rosszul alszom", ert: 0 }, { ker: "Közepesen alszom", ert: 1 }, { ker: "Jól alszom", ert: 3 }], 0.9),
-    new Kalkulator(6, "Mennyire vagy stresszes, ideges általában?", [{ ker: "Gyakran vagok ideges", ert: 0 }, { ker: "Néha vgaok ideges", ert: 1 }, { ker: "Ritkán, általában jól vagyok", ert: 3 },{ ker: "Nem szoktam", ert: 3 }], 0.9),
+    new Kalkulator(6, "Mennyire vagy stresszes, ideges általában?", [{ ker: "Gyakran vagyok ideges", ert: 0 }, { ker: "Néha vagyok ideges", ert: 1 }, { ker: "Ritkán, általában jól vagyok", ert: 3 },{ ker: "Nem szoktam", ert: 3 }], 0.9),
     new Kalkulator(7, "Szedtél-e glicint/kollagént valaha?", [{ ker: "Nem ", ert: 0 }, { ker: "Igen, ritkán", ert: 1 }, { ker: "Igen, napi szinten", ert: 3 }], 1),
     new Kalkulator(8, "Ha szedsz, mennyi glicint/kollagént viszel be naponta?", [{ ker: "Nem szedek", ert: 0 },{ ker: "0–2 g", ert: 0 }, { ker: "3–5 g", ert: 2 }, { ker: "6–10 g", ert: 3 }, { ker: "11 g fölött", ert: 1 }], 1.1),
     new Kalkulator(9, "Tapasztaltál mellékhatásokat (puffadás, hányinger, álmosság) szedés után?", [{ ker: "Nem szedek", ert: 0 },{ ker: "Igen, gyakran tapasztaltam", ert: 1 }, { ker: "Néha, tapasztaltam", ert: 2 }, { ker: "Nem tapasztaltam", ert: 3 }], 1)];
