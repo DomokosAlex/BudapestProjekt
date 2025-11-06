@@ -80,8 +80,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
         const map = {
-            halott: "Halott-e",
-            haigenhonnan: "Honnan halott",
+            halott: "Hallott-e",
+            haigenhonnan: "Honnan hallott",
             nemzetiseg: "Nemzetiség",
             orszag: "Ország",
             nem: "Nem",
