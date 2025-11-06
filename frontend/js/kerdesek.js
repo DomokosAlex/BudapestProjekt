@@ -15,7 +15,7 @@ const kerdesek = [
         "Igen, de nem tudom pontosan",
         "Nem, még soha nem hallottam",
         "Először az oldalunkon olvastam róla"
-    ], false, "Halott-e"),
+    ], false, "Hallott-e"),
 
     new Kerdes(2, "Ha hallott róla, honnan szerezte az információt?", [
         "Orvostól, dietetikustól",
@@ -23,8 +23,8 @@ const kerdesek = [
         "Baráttól, ismerőstől",
         "Közösségi médiából / fórumokról",
         "Egyéb / nem tudom",
-        "Nem halottam"
-    ], false, "Honnan halott"),
+        "Nem hallottam"
+    ], false, "Honnan hallott"),
 
     
     new Kerdes(3, "Milyen nemzetiségű?", [
