@@ -44,7 +44,7 @@ foot.innerHTML=`<div class="row p-2 text-white">
 
             <div class="col-sm-12 col-md-4">
                 <i>
-                    <h3 class="my-3">Készitette: </h3>
+                    <h3 class="my-3">Készítette: </h3>
                 </i>
                 <p><i class="bi bi-code-slash"></i> Domokos Alex</p>
                 <p><i class="bi bi-code-slash"></i> Kovács Milán</p>

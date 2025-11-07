@@ -67,8 +67,8 @@ CREATE TABLE `kerdoiv` (
 --
 
 INSERT INTO `kerdoiv` (`id`, `halott`, `haigenhonnan`, `nemzetiseg`, `orszag`, `nem`, `lakhely`, `kor`, `egeszsegallapot`, `vegzettseg`) VALUES
-(2, 'Igen, és tudom, mire való', 'Orvostól, dietetikustól', 'Szomszédos ország (pl. Román, Szlovák, Ukrán, Szerb stb.)', 'Szomszédos ország (pl. Románia, Szlovákia, Ukrajna, Szerbia stb.)', 'Férfi', 'Nagyváros / városközpont', '18–25 év', 'Jó', 'Középiskola / érettségi'),
-(3, 'Igen, és tudom, mire való', 'Egyéb / nem tudom', 'Szomszédos ország (pl. Román, Szlovák, Ukrán, Szerb stb.)', 'Szomszédos ország (pl. Románia, Szlovákia, Ukrajna, Szerbia stb.)', 'Nem szeretném megadni', 'Nagyváros / városközpont', '18–25 év', 'Közepes', 'Felsőfokú szakképzés'),
+(2, 'Igen, és tudom, mire való', 'Orvostól, dietetikustól', 'Szomszédos ország', 'Szomszédos ország', 'Férfi', 'Nagyváros / városközpont', '18–25 év', 'Jó', 'Középiskola / érettségi'),
+(3, 'Igen, és tudom, mire való', 'Egyéb / nem tudom', 'Szomszédos ország', 'Szomszédos ország', 'Nem szeretném megadni', 'Nagyváros / városközpont', '18–25 év', 'Közepes', 'Felsőfokú szakképzés'),
 (4, 'Igen, de nem tudom pontosan', 'Közösségi médiából / fórumokról', 'Magyar', 'Magyarország', 'Férfi', 'Nagyváros / városközpont', '18–25 év', 'Rossz', 'Felsőfokú szakképzés');
 
 --

@@ -42,7 +42,6 @@ window.addEventListener("DOMContentLoaded", () => {
                     labels: Object.keys(adatok[felirat[i]]),
                     
                     datasets: [{
-                        label: '# of Votes',
                         data: Object.values(adatok[felirat[i]]),
                     }]
                 },
@@ -80,7 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
         const map = {
-            halott: "Hallott-e",
+            hallott: "Hallott-e",
             haigenhonnan: "Honnan hallott",
             nemzetiseg: "Nemzetiség",
             orszag: "Ország",

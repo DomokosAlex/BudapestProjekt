@@ -29,14 +29,14 @@ const kerdesek = [
     
     new Kerdes(3, "Milyen nemzetiségű?", [
         "Magyar",
-        "Szomszédos ország (pl. Román, Szlovák, Ukrán, Szerb stb.)",
+        "Szomszédos ország",
         "Egyéb"
     ], false, "Nemzetiség"),
 
     
     new Kerdes(4, "Hol él jelenleg?", [
         "Magyarország",
-        "Szomszédos ország (pl. Románia, Szlovákia, Ukrajna, Szerbia stb.)",
+        "Szomszédos ország",
         "Más, távolabbi ország"
     ], false, "Ország"),
 
