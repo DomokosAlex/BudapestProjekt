@@ -4,7 +4,7 @@ const chart = new Chart(ctx, {
     data: {
         labels: ['L-Theanine (100 mg, 60 kapszula)', 'Glicin (500g por)','N-Acetylcysteine (NAC) (750 mg, 120 kapszula)'], 
         datasets: [{
-            label: '# of Votes',
+          label: '%',
             data: [22.44, 14.99, 21.49, ], 
             backgroundColor: [
                 'red', 'green', 'yellow'
@@ -16,15 +16,27 @@ const chart = new Chart(ctx, {
         responsive: true, 
 
         scales: {
+          x: {
+                ticks: {
+                  color:'white'
+                }
+            },
             y: {
-                beginAtZero: true 
+                beginAtZero: true, 
+                ticks: {
+                  color:'white'
+                }
             }
         },
         plugins: {
+
+          legend: {
+    display: false 
+  },
       tooltip: {
         callbacks: {
           label: function(context) {
-            return '€' + context.parsed.y; // show only the value in euros
+            return '€' + context.parsed.y; 
           }
         }
       }
