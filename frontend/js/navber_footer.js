@@ -1,33 +1,32 @@
 const nav=document.getElementById("Nav");
 
 nav.innerHTML=`
-<nav class="navbar navbar-expand-sm" id="navbg">
+<nav class="navbar navbar-expand-lg " id="navbg">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav w-100 d-flex justify-content-evenly mb-2 mb-lg-0">
                         
-                        <li class="nav-item"><a class="nav-link" href="#"><button
-                                    class="border-bottom btn btn-lg text-white">Dokumentáció</button></a></li>
+                        <li class="nav-item "><a class="nav-link" href="#"><button
+                                    class="border-bottom btn btn-lg text-white meret">Dokumentáció</button></a></li>
 
                         <li class="nav-item"><a class="nav-link" href="/html/ajanlas.html"><button
-                                    class="border-bottom btn btn-lg text-white">Glicin Teszt</button></a></li>
+                                    class="border-bottom btn btn-lg text-white meret">Glicin Teszt</button></a></li>
 
                         <li class="nav-item"><a class="nav-link" href="/html/index.html"><button
-                                    class="btn btn-outline-primary btn-lg text-white">Főoldal</button></a></li>
+                                    class="border-bottom btn btn-lg text-white meret">Főoldal</button></a></li>
 
                         <li class="nav-item"><a class="nav-link" href="/html/kerdoiv.html"><button
-                                    class="btn btn-outline-primary btn-lg text-white">Kérdőív</button></a></li>
+                                    class="border-bottom btn btn-lg text-white meret">Kérdőív</button></a></li>
 
                         <li class="nav-item"><a class="nav-link" href="/html/statisztikak.html"><button
-                                    class="btn btn-outline-primary btn-lg text-white">Statisztika</button></a></li>
+                                    class="border-bottom btn btn-lg text-white meret">Statisztika</button></a></li>
 
                                     
                         <li class="nav-item"><a class="nav-link" href="/html/igazolas.html"><button
-                                    class="btn btn-outline-primary btn-lg text-white">Igazolás</button></a></li>
+                                    class="border-bottom btn btn-lg text-white meret">Igazolás</button></a></li>
 
                     </ul>
                 </div>

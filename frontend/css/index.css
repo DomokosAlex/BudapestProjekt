@@ -31,6 +31,8 @@ transition: transform 0.3s ease;
 #navbg {
   background: rgba(30, 40, 80, 0.8); /* semi-transparent */
   backdrop-filter: blur(5px);
+  position: absolute;
+  width: 100%;
 }
 a{
     color:white;
@@ -58,4 +60,7 @@ section.hero {
 .big-radio {
   transform: scale(1.5); 
   margin-right: 5px;     
+}
+.meret{
+  width: 150px;
 }
