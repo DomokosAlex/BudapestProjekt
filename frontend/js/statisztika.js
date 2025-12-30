@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
         var row = document.createElement("div");
         row.className = "row gx-1 my-2";
 
-        console.log(Object.keys(adatok[felirat[0]]));
+    
 
 
         for (let i = 0; i < felirat.length; i++) {
@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-            row.appendChild(col)
+            row.appendChild(col);
             var nem = new Chart(document.getElementById(i), {
                 type: 'pie',
                 data: {
@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
             });
 
             nem.update();
-
+            
         }
 
     }

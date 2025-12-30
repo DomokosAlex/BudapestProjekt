@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=M+PLUS+1p&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="../css/index.css" rel="stylesheet">
+    <title>Glicinhub</title>
+
+
+</head>
+
+<body>
+
+    <header class="text-white text-center sticky-top" id="Nav"></header>
+
+    <main class="container-fluid text-white p-5">
+
+        <section class="p-3 text-center" id="jogi">
+
+            <h1 class="my-4">Tudományos háttér</h1>
+            <h3>Tudományos háttér és klinikai bizonyítékok ahol az elmélet találkozik az eredménnyel.</h3>
+            <h3><i>Ismerje meg a glicin hatásmechanizmusait alátámasztó kutatásokat.</i></h3>
+            <hr>
+
+        </section>
+
+        <section class="p-3" id="alvas">
+            <div class="row">
+                <h3 class="text-center mb-4"><b>Alvásminőség</b> és <b>Cirkadián Ritmus</b></h3>
+                <div class="p-2">
+                    <div class="row">
+
+                        <p class="fs-4">
+                            A glicin nem hagyományos altatószer, hanem egy precíziós termoregulációs modulátor. A glicin az NMDA-receptorokon
+                            keresztül a szuprachiasmatikus magban (SCN) fejti ki hatását, ami a szervezet belső órájának
+                            (cirkadián ritmus) központja. Amely abban segít, hogy a szervezet könnyebben
+                            el
+                            tudjon aludni.
+                            Segíti a test lehűlését, ami természetes jelzés az agy számára az alvás
+                            megkezdéséhez. A glicin kitágítja a végtagok ereit, így a test több hőt tud leadni.
+                            Ennek hatására csökken a test belső hőmérséklete, ami megkönnyíti az elalvást és javíthatja
+                            az alvás minőségét.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="row p-2 g-3 my-4">
+
+
+                    <div class="col-md-4 col-sm-12">
+                        <p class="fs-5">Átlagosan 34%-os csökkenés az elalváshoz szükséges időben</p>
+                        <hr>
+                        <div class="d-flex justify-content-center">
+                            <canvas id="alvasabra"></canvas>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <p class="fs-5">Az alanyok 15%-kal gyorsabban érték el a mélyalvási fázist.</p>
+                        <hr>
+                        <div class="d-flex justify-content-center">
+                            <canvas id="alvasabra2"></canvas>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <p class="fs-5">A glicin 33%-kal csökkentette a délutáni
+                            fáradtságérzetet </p>
+                        <hr>
+                        <div class="d-flex justify-content-center">
+                            <canvas id="alvasabra3"></canvas>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <p class="fs-4">Tizenegy egészséges önkéntes (nyolc nő és három férfi), 30-57 éves kor között
+                        (átlag, szórás = 40,5 ± 10,1 év), akik nappali munkát végeztek, vettek részt a jelen
+                        tanulmányban. A vizsgálat ideje alatt menstruáló nőket kizárták.
+                    </p>
+                    <p class="fs-4"> A glicin nem az alvás mennyiségét növelte meg drasztikusan, hanem a minőségét
+                        javította azzal, hogy az alanyok átlagosan 6,5 perccel hamarabb kerültek a legpihentetőbb, lassú
+                        hullámú alvási fázisba (SWS).
+
+                    </p>
+                    <p class="fs-4">
+                        A tanulmány kiemeli, hogy a glicin <b>NEM VÁLTOZTATTA</b> meg az alvás architektúráját. Ez
+                        kritikus adat: míg a gyógyszeres altatók gyakran elnyomják a REM fázist vagy módosítják az SWS
+                        arányát, a glicin mellett a mélyalvás százalékos aránya a teljes alvásidőhöz képest stabil
+                        maradt, de az elérése felgyorsult.
+                    </p>
+
+                    <p class="fs-4">OSA-alváskérdőív alapján, ahol a magasabb pontszám jobb minőséget jelent (Frissesség
+                        ébredéskor) Placebo: ~45 pont, Glicin: ~53 pont</p>
+                    <p class="fs-4"><b>Napközbeni álmosság csökkenése: Az alanyok szubjektív fáradtságérzete a glicin
+                            utáni reggelen ~20%-kal volt alacsonyabb.</b></p>
+
+                </div>
+
+                <div class="dropdown mb-4 text-dark">
+                    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Források
+                    </a>
+
+                    <ul class="dropdown-menu text-dark" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item"
+                                href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1479-8425.2007.00262.x"
+                                target="_blank">Yamadera et al. (2007) — Sleep quality and polysomnography improvements
+                                with glycine.</a></li>
+                        <li><a class="dropdown-item"
+                                href="https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2012.00061/full"
+                                target="_blank">Bannai & Kawai (2012) — Sleepiness/fatigue reduction and SCN modulation
+                                effects.</a></li>
+                    </ul>
+                </div>
+
+                <hr>
+
+            </div>
+
+        </section>
+
+        <section class="p-3" id="ideg">
+
+            <h3 class="text-center"><b>Idegrendszer</b> és <b>Kognitív Funkció</b></h3>
+            <div class="p-2">
+
+                <div class="row">
+                    <p class="fs-4">A glicin kettős szerepet tölt be: gátló neurotranszmitter a gerincvelőben és
+                        társ-agonista az
+                        NMDA-receptorokon az agyban.</p>
+                </div>
+
+                <p>
+                    <br>
+                    * Klinikai hatás: Javítja az epizodikus memóriát és a figyelmet, különösen stressz vagy
+                    kialvatlanság
+                    esetén.<br>
+                    * Numerikus adatok a diagramhoz:<br>
+                    * Memória teszt: Fiatal felnőtteknél a glicin bevitele 15-20%-os javulást mutatott a felismerési
+                    feladatokban.
+                    * Skizofrénia (kiegészítő kezelés): Napi 0,8g/ttkg dózis mellett a negatív tünetek (érzelmi
+                    sivárság,
+                    motivációhiány) 23%-kal csökkentek a placebo csoporthoz képest.
+                </p>
+
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Források
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1479-8425.2007.00262.x">File et
+                                al. (1999) - Journal of Psychopharmacology</a></li>
+                        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3328903/">Heresco-Levy et al. (1999) -
+                                Archives of General Psychiatry</a></li>
+                    </ul>
+                </div>
+
+                <hr>
+
+            </div>
+
+        </section>
+
+        <section class=" p-5" id="izombor">
+            <h3> Anyagcsere és Vércukorszint Szabályozás</h3>
+            <p>
+                A glicin fokozza az inzulinérzékenységet azáltal, hogy serkenti a GLP-1 (glükagonszerű peptid-1)
+                kiválasztását a bélben.<br>
+                * Numerikus adatok a diagramhoz (Vércukor-válasz):<br>
+                * Glükóz-csúcs: 5g glicin és 25g glükóz együttes fogyasztása 15%-kal alacsonyabb vércukor-csúcsot
+                eredményezett.
+                * Inzulinválasz: Az inzulin-görbe alatti terület (AUC) 66%-kal volt nagyobb, ami gyorsabb
+                glükóz-eltávolítást jelent a vérből anélkül, hogy hipoglikémiát okozna.
+                * Hosszú távú hatás (HbA1c): Cukorbetegeknél napi 5g glicin 3 hónap alatt 22%-os csökkenést mutatott az
+                éhgyomri inzulinszintben.
+            </p>
+            <p> Forrás:
+                * Gannon et al. (2002) - The American Journal of Clinical Nutrition </p>
+
+        </section>
+        <section class=" p-5" id="vercukor">
+            <h3>Izom, Bőr és Kollagén Szintézis</h3>
+            <p>
+                A glicin a kollagén fehérje minden harmadik aminosava. Hiánya "szűk keresztmetszetet" jelent a szöveti
+                regenerációban.<br>
+                * Metabolikus deficit: A szervezet saját szintézise (~1,5g/nap) és az étrendi bevitel összesen messze
+                elmarad a kollagén-szükséglettől.<br>
+                * Numerikus adatok a diagramhoz:<br>
+                * Szintézis rés: Egy 70 kg-os felnőttnek napi ~15g glicinre lenne szüksége az optimális
+                kollagén-anyagcseréhez. A deficit átlagosan napi 10-12 gramm.
+                * Izomvédelem: Kísérleti modellekben a glicin 20-30%-kal lassította az izomszövet lebomlását (atrófiát)
+                súlyos betegség vagy éhezés esetén.
+            </p>
+            <p> Forrás:
+                * Meléndez-Hevia et al. (2009) - GeroScience (Az általad küldött Systematic Review egyik alapforrása).
+            </p>
+        </section>
+        <section class=" p-5" id="emesztes">
+
+            <h3>Emésztőrendszer és Bélfal Integritás</h3>
+            <p>
+                A glicin védi a bélnyálkahártyát az oxidatív stressztől és a gyulladástól, erősítve a "tight junction"
+                fehérjéket.<br>
+                * Hatás: Megelőzi a bél áteresztőképességének növekedését (szivárgó bél).<br>
+                * Numerikus adatok a diagramhoz:<br>
+                * Gyomorfekély elleni védelem: Állatkísérletekben a glicin 80%-kal csökkentette az alkohol okozta
+                gyomornyálkahártya-sérüléseket.
+                * Gyulladásos markerek: A glicin 60%-kal mérsékelte a TNF-alfa szintet a bélrendszeri gyulladásos
+                folyamatok során.
+            </p>
+            <p> Forrás:
+                * Razak et al. (2017) - Oxidative Medicine and Cellular Longevity
+            </p>
+
+        </section>
+        <section class=" p-5" id="meregtelenites">
+            <h3> Méregtelenítés és Antioxidáns Védelem (Glutation)</h3>
+            <p> A glicin a glutation (a szervezet fő antioxidánsa) szintézisének korlátozó faktora. Ciszteinnel
+                kombinálva (GlyNAC) drasztikus eredményeket mutat az öregedés ellen.<br>
+                * Numerikus adatok a diagramhoz:<br>
+                * Glutation szint: Időseknél a glicin pótlása 94%-kal növelte a vörösvértestek glutation
+                koncentrációját.
+                * Oxidatív stressz: Az F2-izoprosztánok (sejtkárosodási marker) szintje 78%-kal csökkent 16 hét után.
+                * DNS károsodás: A genotoxikus stressz markerei 57%-kal mérséklődtek.
+            </p>
+            <p> Forrás:
+                * Sekhar et al. (2011) - The American Journal of Clinical Nutrition</p>
+
+        </section>
+
+
+        <!-- <p>Jogi Nyilatkozat / Disclaimer</p>
+            <p>Az oldal kizárólag tájékoztató jellegű, és tudományos publikációk összefoglalásán alapul. Nem minősül
+                orvosi tanácsadásnak, diagnózisnak vagy kezelési javaslatnak. Bármilyen étrend-kiegészítő alkalmazása
+                előtt
+                konzultáljon kezelőorvosával. A bemutatott adatok specifikus klinikai környezetben mért eredmények,
+                amelyek
+                egyénenként eltérőek lehetnek.</p>-->
+    </main>
+
+
+    <footer class="bg-dark container-fluid text-center p-3" id="Footer"></footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/navber_footer.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-error-bars@4.4.1/build/index.umd.min.js"></script>
+    <script src="../js/IgazolasAbrak/Alvas.js"></script>
+</body>
+
+</html>

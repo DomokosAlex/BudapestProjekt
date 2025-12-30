@@ -25,7 +25,7 @@ nav.innerHTML=`
                                     class="border-bottom btn btn-lg text-white meret">Statisztika</button></a></li>
 
                                     
-                        <li class="nav-item"><a class="nav-link" href="/html/igazolas.html"><button
+                        <li class="nav-item"><a class="nav-link" href="/html/tudomanyhatter.html"><button
                                     class="border-bottom btn btn-lg text-white meret">Igazolás</button></a></li>
 
                     </ul>
@@ -42,8 +42,8 @@ foot.innerHTML=`<div class="row p-2 text-white">
                 <i>
                     <h3 class="my-3">Elérhetőségek:</h3>
                 </i>
-                <p><a href="https://github.com/DomokosAlex"><i class="bi bi-github"></i> Github</a></p>
-                <p><a href="https://github.com/KovacsMilan12454848"><i class="bi bi-github"></i> Github</a></p>
+                <p><a href="https://github.com/DomokosAlex"><i class="bi bi-github"></i> Github (Domokos Alex)</a></p>
+                <p><a href="https://github.com/KovacsMilan12454848"><i class="bi bi-github"></i> Github (Kovács Milán)</a></p>
             </div>
 
             <div class="col-sm-12 col-md-4">
