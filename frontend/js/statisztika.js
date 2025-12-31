@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const felirat = Object.keys(adatok);
         var row = document.createElement("div");
-        row.className = "row gx-1 my-2";
+        row.className = "row gx-1 my-4";
 
     
 
@@ -18,20 +18,19 @@ window.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < felirat.length; i++) {
             if (i % 3 == 0) {
                 row = document.createElement("div");
-                row.className = "row gx-1 my-2";
+                row.className = "row gx-1";
                 tarto.appendChild(row);
             }
 
 
             const col = document.createElement("div");
 
-            col.className = "col-md-4 col-sm-12"
+            col.className = "col-md-4 col-sm-12 mb-5"
 
             col.innerHTML += `
-
-      <h3 class="text-center my-2">${felirat[i]}</h3>
-      <div class="d-flex justify-content-center">
-        <canvas id="${i}" style="scale: 0.7;"></canvas>
+      <h3 class="text-center">${felirat[i]}</h3>
+      <div class="d-flex justify-content-center chart-cont">
+        <canvas id="${i}"></canvas>
       </div>
     `;
 
@@ -47,6 +46,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false, 
+        
                     plugins: {
                         legend: {
                             labels: {
@@ -56,8 +57,12 @@ window.addEventListener("DOMContentLoaded", () => {
                                 }
                             }
                         }
-                    }
+                    }, 
+
+                    
                 }
+
+                
             });
 
             nem.update();

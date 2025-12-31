@@ -67,3 +67,11 @@ section.hero {
 main{
   padding-top: 90px;
 }
+
+.chart-cont{
+  height:35vh;
+}
+
+.pozitiv-szin{
+  color:rgb(5, 247, 5);
+}

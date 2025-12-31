@@ -7,24 +7,31 @@ const chart = new Chart(ctx, {
           label: '%',
             data: [22.44, 14.99, 21.49, ], 
             backgroundColor: [
-                'red', 'green', 'yellow'
+                'rgba(247, 5, 5, 0.7)', 'rgba(5, 247, 5, 0.7)', 'rgba(223, 247, 5, 0.7)'
             ],
             borderWidth: 1
         }]
     },
     options: {
         responsive: true, 
+        maintainAspectRatio: false,
 
         scales: {
-          x: {
+            x: {
                 ticks: {
-                  color:'white'
+                    color: 'white',
+                    font: {
+                        size: 18
+                    }
                 }
             },
             y: {
-                beginAtZero: true, 
+                beginAtZero: true,
                 ticks: {
-                  color:'white'
+                    color: 'white',
+                    font: {
+                        size: 20
+                    }
                 }
             }
         },

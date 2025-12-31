@@ -18,7 +18,7 @@ const data = {
         },
         {
             label: 'Glicinnel',
-            backgroundColor: 'rgba(54, 235, 93, 0.5)',
+            backgroundColor: 'rgba(5, 247, 5, 0.7)',
             borderColor: 'rgba(4, 124, 14, 1)',
             borderWidth: 2,
             data: [{
@@ -35,6 +35,7 @@ const config = {
     data: data,
     options: {
         responsive: true,
+        maintainAspectRatio: false, 
         plugins: {
             legend: {
                 display: true,
@@ -88,7 +89,7 @@ const data2 = {
         },
         {
             label: 'Glicinnel',
-            backgroundColor: 'rgba(54, 235, 93, 0.5)',
+            backgroundColor: 'rgba(5, 247, 5, 0.7)',
             borderColor: 'rgba(4, 124, 14, 1)',
             borderWidth: 2,
             data: [{
@@ -108,6 +109,7 @@ const config2 = {
     data: data2,
     options: {
         responsive: true,
+        maintainAspectRatio: false, 
         plugins: {
             legend: {
                 display: true,
@@ -157,7 +159,7 @@ const data3 = {
     }, {
         label: 'Glicinnel',
         data: [89.3],
-        backgroundColor: 'rgba(54, 235, 93, 0.5)',
+        backgroundColor: 'rgba(5, 247, 5, 0.7)',
         borderColor: 'rgba(4, 124, 14, 1)',
         borderWidth: 3
     }]
@@ -168,6 +170,7 @@ const config3 = {
     data: data3,
     options: {
         responsive: true,
+        maintainAspectRatio: false, 
         plugins: {
             legend: {
                 position: 'top',
@@ -199,5 +202,8 @@ const config3 = {
     }
 };
 
-const ctx3 = document.getElementById('alvasabra3').getContext('2d');
-new Chart(ctx3, config3);
+
+    const ctx3 = document.getElementById('alvasabra3').getContext('2d');
+    new Chart(ctx3, config3);
+
+

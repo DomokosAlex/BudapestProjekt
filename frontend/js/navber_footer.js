@@ -26,7 +26,7 @@ nav.innerHTML=`
 
                                     
                         <li class="nav-item"><a class="nav-link" href="/html/tudomanyhatter.html"><button
-                                    class="border-bottom btn btn-lg text-white meret">Igazolás</button></a></li>
+                                    class="border-bottom btn btn-lg text-white meret">Források</button></a></li>
 
                     </ul>
                 </div>
