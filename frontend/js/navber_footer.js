@@ -11,6 +11,9 @@ nav.innerHTML=`
                         
                         <li class="nav-item "><a class="nav-link" href="#"><button
                                     class="border-bottom btn btn-lg text-white meret">Dokumentáció</button></a></li>
+                                    
+                        <li class="nav-item "><a class="nav-link" href="/html/tarsak.html"><button
+                                    class="border-bottom btn btn-lg text-white meret">Társ Elemek</button></a></li>
 
                         <li class="nav-item"><a class="nav-link" href="/html/ajanlas.html"><button
                                     class="border-bottom btn btn-lg text-white meret">Glicin Teszt</button></a></li>
