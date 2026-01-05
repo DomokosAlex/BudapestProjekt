@@ -293,7 +293,7 @@
 
         </section>
 
-        <!-- Anyagcsere és Vércukorszint Szabályozás-->
+
         <section class=" p-3" id="vercukor">
             <h3 class="mb-4 text-center"> <b> Anyagcsere és Vércukorszint Szabályozás</b></h3>
 
@@ -445,7 +445,7 @@
 
 
 
-                   
+
                     <p class="fs-4">Kísérletes vizsgálatok kimutatták, hogy a porcsejtek II-es típusú
                         kollagénszintézisét elsősorban a glicin rendelkezésre állása korlátozza. A glicin
                         koncentrációjának a fiziológiás szint fölé emelése in vitro körülmények között jelentős,
@@ -459,9 +459,9 @@
 
 
             </div>
-             <p class="fs-4">Az ízületi porcsejtek (kondrociták) kollagéntermelése drasztikusan
-                        felgyorsul, ha extra glicint kapnak. Ez bizonyítja, hogy a szervezet alapállapotban valóban
-                        „glicin-éhezésben” van a kollagéntermelés terén.</p>
+            <p class="fs-4">Az ízületi porcsejtek (kondrociták) kollagéntermelése drasztikusan
+                felgyorsul, ha extra glicint kapnak. Ez bizonyítja, hogy a szervezet alapállapotban valóban
+                „glicin-éhezésben” van a kollagéntermelés terén.</p>
 
             <div class="dropdown mb-4 text-dark">
                 <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
@@ -470,62 +470,217 @@
                 </a>
 
                 <ul class="dropdown-menu text-dark" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item"
-                            href="https://pubmed.ncbi.nlm.nih.gov/20093739/"
-                            target="_blank">Meléndez-Hevia E. A weak link in metabolism: the metabolic capacity for glycine biosynthesis does not satisfy the need for collagen synthesis. J Biosci. (2009) PMID: 20093739.</a></li>
-                    <li><a class="dropdown-item"
-                            href="https://pubmed.ncbi.nlm.nih.gov/30006659/"
-                            target="_blank">de Paz-Lugo P. Acute glycine deficiency could be an important cause of osteoarthritis. Amino Acids. (2018) PMCID: PMC6153947.</a></li>
+                    <li><a class="dropdown-item" href="https://pubmed.ncbi.nlm.nih.gov/20093739/"
+                            target="_blank">Meléndez-Hevia E. A weak link in metabolism: the metabolic capacity for
+                            glycine biosynthesis does not satisfy the need for collagen synthesis. J Biosci. (2009)
+                            PMID: 20093739.</a></li>
+                    <li><a class="dropdown-item" href="https://pubmed.ncbi.nlm.nih.gov/30006659/" target="_blank">de
+                            Paz-Lugo P. Acute glycine deficiency could be an important cause of osteoarthritis. Amino
+                            Acids. (2018) PMCID: PMC6153947.</a></li>
                 </ul>
             </div>
 
         </section>
 
-        <section class=" p-5" id="emesztes">
+        <section class="p-3 row" id="emesztes">
+    <h3 class="text-center mb-4">
+        <b>Emésztőrendszer</b>
+    </h3>
 
-            <h3>Emésztőrendszer és Bélfal Integritás</h3>
-            <p>
-                A glicin védi a bélnyálkahártyát az oxidatív stressztől és a gyulladástól, erősítve a "tight junction"
-                fehérjéket.<br>
-                * Hatás: Megelőzi a bél áteresztőképességének növekedését (szivárgó bél).<br>
-                * Numerikus adatok a diagramhoz:<br>
-                * Gyomorfekély elleni védelem: Állatkísérletekben a glicin 80%-kal csökkentette az alkohol okozta
-                gyomornyálkahártya-sérüléseket.
-                * Gyulladásos markerek: A glicin 60%-kal mérsékelte a TNF-alfa szintet a bélrendszeri gyulladásos
-                folyamatok során.
+    <div class="row">
+        <p class="fs-4">
+            A glicin az emésztőrendszerben nem pusztán strukturális aminosav, hanem
+            <b>gyulladáscsökkentő és citoprotektív hatású szabályozó molekula</b>.
+            Állat- és sejtkísérletes modellekben kimutatták, hogy csökkenti az oxidatív stresszt,
+            stabilizálja a bélnyálkahártya sejtjeit, és hozzájárulhat a bélbarrier funkcionális
+            integritásának megőrzéséhez.
+        </p>
+
+        <p class="fs-4">
+            Ezek a hatások <b>védelmet nyújthatnak a fokozott béláteresztéssel szemben</b>,
+             amely számos krónikus gyulladásos és metabolikus kórfolyamattal
+            hozható összefüggésbe.
+        </p>
+    </div>
+
+    <div class="row p-2 g-3 my-4">
+        <div class="col-lg-4 col-sm-12">
+            <p >
+                Alkohol általi gyomorkárosodás
+                <span class="pozitiv-szin">jelentős</span> csökkenése
+                
             </p>
-            <div class="dropdown mb-4 text-dark">
-                <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Források
-                </a>
-
-                <ul class="dropdown-menu text-dark" aria-labelledby="dropdownMenuLink">
-                    <li><a class="dropdown-item" href="https://pubmed.ncbi.nlm.nih.gov/18852529/"
-                            target="_blank">Glycine treatment decreases proinflammatory cytokines and increases
-                            interferon-gamma in patients with type 2 diabetes</a></li>
-                    <li><a class="dropdown-item" href="https://pubmed.ncbi.nlm.nih.gov/12450897/" target="_blank">The
-                            metabolic response to ingested glycine</a></li>
-                </ul>
-            </div>
-
             <hr>
+            <div class="d-flex justify-content-center chart-cont">
+                <canvas id="emesztes1"></canvas>
+            </div>
+        </div>
 
-        </section>
-        <section class=" p-5" id="meregtelenites">
-            <h3> Méregtelenítés és Antioxidáns Védelem (Glutation)</h3>
-            <p> A glicin a glutation (a szervezet fő antioxidánsa) szintézisének korlátozó faktora. Ciszteinnel
-                kombinálva (GlyNAC) drasztikus eredményeket mutat az öregedés ellen.<br>
-                * Numerikus adatok a diagramhoz:<br>
-                * Glutation szint: Időseknél a glicin pótlása 94%-kal növelte a vörösvértestek glutation
-                koncentrációját.
-                * Oxidatív stressz: Az F2-izoprosztánok (sejtkárosodási marker) szintje 78%-kal csökkent 16 hét után.
-                * DNS károsodás: A genotoxikus stressz markerei 57%-kal mérséklődtek.
+        <div class="col-lg-4 col-sm-12">
+            <p >
+                Bélrendszeri <b>TNF-α</b> szint
+                <span class="pozitiv-szin">~60%-os</span> mérséklődése
+                
             </p>
-            <p> Forrás:
-                * Sekhar et al. (2011) - The American Journal of Clinical Nutrition</p>
+            <hr>
+            <div class="d-flex justify-content-center chart-cont">
+                <canvas id="emesztes2"></canvas>
+            </div>
+        </div>
 
-        </section>
+        <div class="col-lg-4 col-sm-12">
+            <p >
+                Bélfal oxidatív stressz markerek
+                <span class="pozitiv-szin">csökkenése</span>   <!-- szignifikáns -->
+            </p>
+            <hr>
+            <div class="d-flex justify-content-center chart-cont">
+                <canvas id="emesztes3"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <p class="fs-4">
+            Állatkísérletes vizsgálatokban a glicin jelentősen csökkentette az etanol által
+            kiváltott gyomornyálkahártya-sérüléseket, miközben megőrizte a mucinréteg
+            szerkezeti épségét és javította a sejtek antioxidáns kapacitását.
+        </p>
+
+        <p class="fs-4">
+            Gyulladásos bélmodellekben a glicin több mint <b>60%-kal mérsékelte a TNF-α szintet</b>,
+            amely kulcsszerepet játszik a bélfal károsodásában és a szisztémás
+            gyulladásos folyamatok fenntartásában.
+        </p>
+
+        <p class="fs-4">
+            A glicin hatása <b>immunmoduláló jellegű</b>: nem szünteti meg az immunválaszt,
+            hanem hozzájárul annak fiziológiás egyensúlyához a bélrendszerben.
+        </p>
+    </div>
+
+    <div class="dropdown mb-4 text-dark">
+        <a class="btn btn-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Források
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="https://www.mdpi.com/1422-0067/19/7/1980" target="_blank">
+                    Int. J. Mol. Sci. (2018) – Glycine and intestinal protection (állatkísérletes és mechanisztikus áttekintés)
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10379184/" target="_blank">
+                    Glycine, inflammation and gut barrier integrity – review
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="https://pubmed.ncbi.nlm.nih.gov/7065145/" target="_blank">
+                    Human study – Glycine effects on gastric physiology
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+</section>
+
+
+
+        <section class="p-5" id="meregtelenites">
+    <h3 class="text-center mb-4">
+        <b>Méregtelenítés</b> és <b>Antioxidáns Védelem</b>
+        
+    </h3>
+
+    <p class="fs-4">
+        A glicin az emberi méregtelenítés két alapvető mechanizmusában tölt be kulcsszerepet:
+        <b>1-</b> a glutation szintézisében, amely a sejtek elsődleges antioxidáns és
+        detoxikációs molekulája, valamint <b>2-</b> a glicin-konjugációs útvonalon,
+        ahol potenciálisan toxikus metabolitok glicinhez kötve, vízoldékony formában
+        ürülnek a szervezetből.
+    </p>
+
+    <p class="fs-4">
+        Humán klinikai vizsgálatok igazolták, hogy glicinhiány esetén mindkét rendszer
+        működése romlik, míg glicinpótlás (különösen ciszteinnel kombinálva)
+        <b>helyreállíthatja a glutation-termelést és csökkentheti az oxidatív stresszt</b>.
+    </p>
+
+    <div class="row p-2 g-3 my-4">
+        <div class="col-lg-4 col-sm-12">
+            <p class="fs-5 text-center">
+                Vörösvértest <b>glutation szint</b> változása
+            </p>
+            <hr>
+            <div class="d-flex justify-content-center chart-cont">
+                <canvas id="mereg1"></canvas>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-12">
+            <p class="fs-5 text-center">
+                <b>Oxidatív stressz</b> markerek 
+            </p>
+            <hr>
+            <div class="d-flex justify-content-center chart-cont">
+                <canvas id="mereg2"></canvas>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-sm-12">
+            <p class="fs-5 text-center">
+                <b>Glicin</b> metabolitok kiválasztása
+            </p>
+            <hr>
+            <div class="d-flex justify-content-center chart-cont">
+                <canvas id="mereg3"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <p class="fs-4">
+        Idősebb felnőttekben a glutation szintézis sebessége jelentősen csökken,
+        ami fokozott oxidatív és genotoxikus stresszhez vezet.
+        Glicin és cisztein együttes pótlása (<b>GlyNAC</b>)
+        humán randomizált vizsgálatokban
+        <b>helyreállította a glutation-termelést</b>,
+        és mérhetően csökkentette a sejtkárosodás biomarkereit.
+    </p>
+
+    <p class="fs-4">
+        További humán adatok igazolják, hogy a glicin elérhetősége közvetlenül
+        meghatározza a glicin-konjugációs detoxikáció hatékonyságát,
+        amely az endogén metabolitok és xenobiotikumok eltávolításának
+        egyik alapvető útvonala.
+    </p>
+
+    <div class="dropdown mb-4 text-dark">
+        <a class="btn btn-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Források
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/21795440/">
+                    Sekhar et al. (2011) – Glutation szintézis glicin + cisztein pótlással (humán vizsgálat)
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/35821844/">
+                    Kumar et al. (2022) – GlyNAC és oxidatív stressz (humán RCT)
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/38633754/">
+                    Obesity-associated glycine deficiency and detox conjugation
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+</section>
+Alkohol-indukált
 
 
         <!-- <p>Jogi Nyilatkozat / Disclaimer</p>
@@ -552,6 +707,9 @@
     <script src="../js/tudomanyhatterAbrak/Vercukor.js"></script>
     <script src="../js/tudomanyhatterAbrak/Idegrendszer.js"></script>
     <script src="../js/tudomanyhatterAbrak/Collagenabra.js"></script>
+    <script src="../js/tudomanyhatterAbrak/emesztes.js"></script>
+    <script src="../js/tudomanyhatterAbrak/meregtelenites.js"></script>
+
 </body>
 
 </html>
