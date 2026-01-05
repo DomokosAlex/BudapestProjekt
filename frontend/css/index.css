@@ -93,5 +93,5 @@ main {
 
 .card-custom:hover {
   transform: translateY(-5px);
-  border-color: #3498db;
+  border-color: #474747;
 }

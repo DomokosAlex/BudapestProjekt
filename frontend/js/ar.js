@@ -9,7 +9,8 @@ const chart = new Chart(ctx, {
             backgroundColor: [
                 'rgba(247, 5, 5, 0.7)', 'rgba(5, 247, 5, 0.7)', 'rgba(223, 247, 5, 0.7)'
             ],
-            borderWidth: 1
+            borderWidth: 1,
+            barThickness: 150
         }]
     },
     options: {
