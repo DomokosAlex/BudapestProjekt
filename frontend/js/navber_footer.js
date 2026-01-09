@@ -1,45 +1,50 @@
-const nav=document.getElementById("Nav");
+const nav = document.getElementById("Nav");
 
-nav.innerHTML=`
-<nav class="navbar navbar-expand-lg " id="navbg">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav w-100 d-flex justify-content-evenly mb-2 mb-lg-0">
-                        
-                        <li class="nav-item "><a class="nav-link" href="#"><button
-                                    class="border-bottom btn btn-lg text-white meret">Dokumentáció</button></a></li>
-                                    
-                        <li class="nav-item "><a class="nav-link" href="/html/tarsak.html"><button
-                                    class="border-bottom btn btn-lg text-white meret">Társ Elemek</button></a></li>
+nav.innerHTML = `
+    <nav class="navbar navbar-expand-lg " id="navbg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav w-100 d-flex justify-content-evenly mb-2 mb-lg-0">
 
-                        <li class="nav-item"><a class="nav-link" href="/html/ajanlas.html"><button
-                                    class="border-bottom btn btn-lg text-white meret">Glicin Teszt</button></a></li>
+                    <li class="nav-item "><a class="nav-link" href="#"><button
+                                class="border-bottom btn btn-lg text-white meret">Dokumentáció</button></a></li>
 
-                        <li class="nav-item"><a class="nav-link" href="/html/index.html"><button
-                                    class="border-bottom btn btn-lg text-white meret">Főoldal</button></a></li>
+                    <li class="nav-item "><a class="nav-link" href="/html/tarsak.html"><button
+                                class="border-bottom btn btn-lg text-white meret">Társelemek</button></a></li>
 
-                        <li class="nav-item"><a class="nav-link" href="/html/kerdoiv.html"><button
-                                    class="border-bottom btn btn-lg text-white meret">Kérdőív</button></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/html/index.html"><button
+                                class="border-bottom btn btn-lg text-white meret">Főoldal</button></a></li>
 
-                        <li class="nav-item"><a class="nav-link" href="/html/statisztikak.html"><button
-                                    class="border-bottom btn btn-lg text-white meret">Statisztika</button></a></li>
+                    <li class="nav-item dropdown p-2">
+                        <a class=" border-bottom  btn btn-lg text-white meret dropdown-toggle " href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Tesztek
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/html/kerdoiv.html">Kérdőív</a></li>
+                            <li><a class="dropdown-item" href="/html/ajanlas.html">Glicin Teszt</a></li>
+                        </ul>
+                    </li>
 
-                                    
-                        <li class="nav-item"><a class="nav-link" href="/html/tudomanyhatter.html"><button
-                                    class="border-bottom btn btn-lg text-white meret">Források</button></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/html/statisztikak.html"><button
+                                class="border-bottom btn btn-lg text-white meret">Statisztika</button></a></li>
 
-                    </ul>
-                </div>
+                    <li class="nav-item"><a class="nav-link" href="/html/tudomanyhatter.html"><button
+                                class="border-bottom btn btn-lg text-white meret">Források</button></a></li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
+
 `
 
 
 const foot = document.getElementById("Footer");
-foot.innerHTML=`<div class="row p-2 text-white">
+foot.innerHTML = `<div class="row p-2 text-white">
 
             <div class="col-sm-12 col-md-4 ">
                 <i>
