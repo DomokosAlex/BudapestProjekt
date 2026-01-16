@@ -22,7 +22,7 @@ const kerdesek = [
         "Egészségügyi / tudományos oldalról",
         "Baráttól, ismerőstől",
         "Közösségi médiából / fórumokról",
-        "Egyéb / nem tudom",
+        "Oldalunkról",
         "Nem hallottam"
     ], false, "Honnan hallott"),
 
@@ -59,10 +59,10 @@ const kerdesek = [
 
     new Kerdes(7, "Milyen korosztályba tartozik?", [
         "18 év alatti",
-        "18–25 év",
-        "26–35 év",
-        "36–45 év",
-        "46–60 év",
+        "18-25 év",
+        "26-35 év",
+        "36-45 év",
+        "46-60 év",
         "61 év és feljebb"
     ], false, "Életkor"),
 
