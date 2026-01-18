@@ -18,6 +18,7 @@
 
 <body>
 
+
     <header class="text-white text-center sticky-top" id="Nav"></header>
     <main class="container text-white text-center">
         <section class="hero text-white text-center container-fluid py-3 h-50">
@@ -25,6 +26,14 @@
 
             <h1 class="display-4">GlicinHub</h1>
             <h3 class="mb-5">Az aminosavak nélkülözhetetlenek a szervezet számára</h3>
+
+
+
+
+
+
+
+
 
             <div class="row align-items-center">
                 <div class="col-md-6 mb-4 mb-md-0">
@@ -243,7 +252,8 @@
                             folyamatokat céloznak. Ugyanakkor van részleges átfedés a hatásaikban - a glicin és az
                             L-teanin elősegítheti a relaxációt és javíthatja az alvás minőségét, míg a glicin és az NAC
                             támogatja a méregtelenítést/antioxidáns folyamatokat. Közülük a glicin lényegesen olcsóbb,
-                            hasonló előnyöket kínálva töredék áron.</h5>
+                            hasonló előnyöket kínálva töredék áron.
+                        </h5>
                     </i>
                 </div>
 
@@ -298,6 +308,59 @@
         </section>
 
 
+
+        <div class="text-center sticky-bottom p-2 rounded-2" id="Adatved">
+            <p class="fs-5">Ez az oldal statisztikai célú sütiket használ a látogatottság mérésére.
+
+
+                <hr>
+            <div class="d-flex flex-row justify-content-evenly my-3">
+
+                <a href="#" data-bs-toggle="modal" data-bs-target="#adatvedmodal"
+                    class="border-bottom btn btn-lg text-white">Adatvédelmi tájékoztató</a>
+
+
+                <button type="button" class="border-bottom btn btn-lg text-white" id="elfogadom">Elfogadom</button>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <div class="modal fade" id="adatvedmodal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="adatvedmodallabel">Adatvédelmi tájékoztató</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body text-justify">
+                        <b>Ez a weboldal statisztikai és tájékoztató célokat szolgál. A látogatás és az opcionális
+                            funkciók használata során bizonyos adatok kezelése történhet az alábbiak szerint.</b>
+                        <hr>
+                        <b>Az adatkezelő a weboldal üzemeltetője.</b>
+                        <hr>
+                        <b>A weboldal statisztikai célú sütiket használ (pl. Google Analytics) a látogatottság és a
+                            felhasználói viselkedés elemzésére.</b>
+                        <hr>
+                        <b>A weboldalon elérhető kérdőív és kalkulátor teljes mértékben opcionális.
+                            Kitöltésük nem feltétele a weboldal használatának.</b>
+                        <hr>
+                        <b>A kérdőív és kalkulátor válaszai statisztikai célból kerülhetnek tárolásra,
+                            személyes azonosításra alkalmatlan formában. Az eredmények egy technikai
+                            azonosító segítségével később visszatekinthetők, a válaszok később nem módosíthatók.</b>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
     </main>
 
     <footer class="bg-dark container-fluid text-center p-3" id="Footer"></footer>
@@ -306,6 +369,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/ar.js"></script>
     <script src="../js/navber_footer.js"></script>
+    <script src="../js/cookie.js"></script>
 
 </body>
 
