@@ -11,7 +11,7 @@ nav.innerHTML = `
                 <ul class="navbar-nav w-100 d-flex justify-content-evenly mb-2 mb-lg-0">
 
                     <li class="nav-item "><a class="nav-link" href="#"><button
-                                class="border-bottom btn btn-lg text-white meret">Dokumentáció</button></a></li>
+                                class="border-bottom btn btn-lg text-white meret p-2">Dokumentáció</button></a></li>
 
                     <li class="nav-item "><a class="nav-link" href="/html/tarsak.html"><button
                                 class="border-bottom btn btn-lg text-white meret">Társelemek</button></a></li>
