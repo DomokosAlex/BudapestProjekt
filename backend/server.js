@@ -29,30 +29,15 @@ app.post('/kerdoiv', (req, res) => {
 
 });
 
-
-app.post('/ajanlas', (req, res) => {
-    const query = 'INSERT INTO ajanlas (kod, szazalek,tanacs,status,bmi) VALUES (?, ?,?,?,?)';
-    const values = [req.body.kod, req.body.szazalek,req.body.tanacs,req.body.status,req.body.bmi];
-
-    connection.query(query, values, (err) => {
-        if (err) {
-            console.error("DB hiba:", err);
-            return res.status(500).json({ error: 'Hiba történt az adatbázis művelet közben.' });
-        }
-        res.json({ status: 'ok' });
-    });
-});
-
-
 app.get('/ajanlas/:kod', (req, res) => {
-  const kod = req.params.kod;
-  connection.query('SELECT * FROM ajanlas WHERE kod = ? LIMIT 1', [kod], (err, results) => {
-    if (err) {
-      console.error('DB hiba:', err);
-      return res.status(500).json({ error: 'db' });
-    }
-    res.json(results[0] || null); 
-  });
+    const kod = req.params.kod;
+    connection.query('SELECT * FROM ajanlas WHERE kod = ? LIMIT 1', [kod], (err, results) => {
+        if (err) {
+            console.error('DB hiba:', err);
+            return res.status(500).json({ error: 'db' });
+        }
+        res.json(results[0] || null);
+    });
 });
 
 
@@ -68,6 +53,50 @@ app.get('/statisztikak', (req, res) => {
         res.json(results);
     });
 });
+
+
+
+const ajanl_kerd = require('./ajanlas_kerdesek');
+
+app.get('/api/questions', (req, res) => {
+    // Csak a kérdést és a válaszlehetőségek szövegét küldjük el
+    const biztonsagosAdat = ajanl_kerd.map(q => ({
+        id: q.id,
+        szoveg: q.szoveg,
+        valaszok: q.valaszok.map(v => v.ker), // Csak a szöveg megy át!
+        megcsinalta: q.megcsinalta,
+        valasztott: q.valasztott
+    }));
+    res.json(biztonsagosAdat);
+});
+
+
+
+
+app.post('/api/kiertekeles', async(req, res) => {
+    try {
+        const { meta, valaszok } = req.body;
+        const add = require('./ajanlas_eredmenysamitas');
+        const { vegeredmeny } = await add.Befejezes(meta, valaszok, connection)
+
+
+        const query = 'INSERT INTO ajanlas (kod,jelzo, leiras,tanacs,status,bmi) VALUES (?,?,?,?,?,?)';
+        const values = [vegeredmeny.kod, vegeredmeny.jelzo,vegeredmeny.leiras ,vegeredmeny.tanacs, vegeredmeny.status, vegeredmeny.bmi];
+
+        connection.query(query, values, (err) => {
+            if (err) {
+                console.error("DB hiba:", err);
+                return res.status(500).json({ error: 'Hiba történt az adatbázis művelet közben.' });
+            }
+            res.json({ status: 'ok', adatok: vegeredmeny });
+        });
+    } catch (error) {
+        console.error("Hiba:", error);
+        res.status(500).json({ error: "Hiba a kiértékelés során." });
+    }
+
+});
+
 
 
 app.listen(3000, () => console.log('Server running on http://localhost:3000'));

@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "szoveg": "Mennyi idős vagy?",
+        "valaszok": [
+            {
+                "ker": "20 év alatt",
+                "ert": 3
+            },
+            {
+                "ker": "20–35 év között",
+                "ert": 1
+            },
+            {
+                "ker": "35–50 év között",
+                "ert": -2
+            },
+            {
+                "ker": "50 év felett",
+                "ert": -4
+            }
+        ],
+        "weight": 1.5,
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 2,
+        "szoveg": "Milyen húsokat fogyasztasz leggyakrabban?",
+        "valaszok": [
+            {
+                "ker": "Főleg színhúst (csirkemell, comb, steak)",
+                "ert": -3
+            },
+            {
+                "ker": "Vegyesen (hús és néha levesek)",
+                "ert": 0
+            },
+            {
+                "ker": "Sok porcos/bőrös részt (kocsonya, körömpörkölt, csontleves)",
+                "ert": 5
+            },
+            {
+                "ker": "Nem eszem húst / Vegán vagyok",
+                "ert": -1
+            }
+        ],
+        "weight": 1.8,
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 3,
+        "szoveg": "Mennyi feldolgozott élelmiszert eszel (konzerv, bolti felvágott, készétel)?",
+        "valaszok": [
+            {
+                "ker": "Rendszeresen, napi szinten",
+                "ert": -5
+            },
+            {
+                "ker": "Gyakran (heti többször)",
+                "ert": -3
+            },
+            {
+                "ker": "Néha, de figyelek rá",
+                "ert": 0
+            },
+            {
+                "ker": "Soha / Csak friss alapanyagot",
+                "ert": 2
+            }
+        ],
+        "weight": 1.6,
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 4,
+        "szoveg": "Hogyan gyógyulnak a sebeid, milyen a bőröd állapota?",
+        "valaszok": [
+            {
+                "ker": "Lassan gyógyul, hegesedik / Striák / Korai ráncok",
+                "ert": -4
+            },
+            {
+                "ker": "Átlagos, normális",
+                "ert": 0
+            },
+            {
+                "ker": "Gyorsan gyógyul, rugalmas a bőröm",
+                "ert": 3
+            }
+        ],
+        "weight": 1.4,
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 5,
+        "szoveg": "Milyen az alvásminőséged és a stressz-szinted?",
+        "valaszok": [
+            {
+                "ker": "Nehezen alszom el / Éjjel felébredek",
+                "ert": -5
+            },
+            {
+                "ker": "Fáradtan ébredek, de végigalszom az éjjelt",
+                "ert": -2
+            },
+            {
+                "ker": "Jól alszom, kipihent vagyok",
+                "ert": 3
+            }
+        ],
+        "weight": 1.4,
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 6,
+        "szoveg": "Tapasztalsz ízületi kattogást vagy fájdalmat?",
+        "valaszok": [
+            {
+                "ker": "Gyakran / Krónikus fájdalom",
+                "ert": -3
+            },
+            {
+                "ker": "Néha, terhelésre",
+                "ert": -1
+            },
+            {
+                "ker": "Nem, minden rendben",
+                "ert": 2
+            }
+        ],
+        "weight": 1.2,
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 7,
+        "szoveg": "Szedsz-e jelenleg glicint vagy kollagént?",
+        "valaszok": [
+            {
+                "ker": "Nem szedek",
+                "ert": 0
+            },
+            {
+                "ker": "Igen, kis mennyiséget / rendszertelenül",
+                "ert": 1
+            },
+            {
+                "ker": "Igen, nagy dózist (5g+ glicin vagy 10g+ kollagén)",
+                "ert": 5
+            }
+        ],
+        "weight": 1.0,
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 8,
+        "szoveg": "Ha szedtél már glicint, tapasztaltál rosszullétet (szorongás, pörgés, hányinger)?",
+        "valaszok": [
+            {
+                "ker": "Még nem szedtem / Nem tapasztaltam",
+                "ert": 0
+            },
+            {
+                "ker": "Igen, rosszul voltam tőle",
+                "ert": -20
+            },
+            {
+                "ker": "Csak enyhe puffadást",
+                "ert": 0
+            }
+        ],
+        "weight": 3.0,
+        "megcsinalta": false,
+        "valasztott": null
+    }
+]

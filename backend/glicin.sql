@@ -29,8 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ajanlas` (
   `id` int(11) NOT NULL,
-  `kod` varchar(255) DEFAULT NULL,
-  `szazalek` varchar(255) DEFAULT NULL,
+  `kod` varchar(8) NOT NULL ,
+  `jelzo` varchar(55) DEFAULT NULL ,
+  `leiras` varchar(255) DEFAULT NULL,
   `tanacs` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `bmi` int(255) DEFAULT NULL
@@ -39,10 +40,10 @@ CREATE TABLE `ajanlas` (
 --
 -- A tábla adatainak kiíratása `ajanlas`
 --
-
-INSERT INTO `ajanlas` (`id`, `kod`, `szazalek`, `tanacs`, `status`, `bmi`) VALUES
-(1, 'b958', '0', 'Növeld a kollagénben gazdag ételek (csontlé, bőr, zselatin) fogyasztását.,Próbálj 5–10 g napi glicint vagy kollagénport 1–2 hétig, és figyeld a változásokat.,Alacsony testsúly: növeld a kalória- és fehérjebevitelt.', 'Glicin/kollagén bevitel valószínű hiányos', '16.5');
-
+/*
+INSERT INTO `ajanlas` (`id`, `kod`, `leiras`, `tanacs`, `status`, `bmi`) VALUES
+(1, '12345678', '0', 'Növeld a kollagénben gazdag ételek (csontlé, bőr, zselatin) fogyasztását.,Próbálj 5–10 g napi glicint vagy kollagénport 1–2 hétig, és figyeld a változásokat.,Alacsony testsúly: növeld a kalória- és fehérjebevitelt.', 'Glicin/kollagén bevitel valószínű hiányos', '16.5');
+*/
 -- --------------------------------------------------------
 
 --
@@ -67,9 +68,9 @@ CREATE TABLE `kerdoiv` (
 --
 
 INSERT INTO `kerdoiv` (`id`, `halott`, `haigenhonnan`, `nemzetiseg`, `orszag`, `nem`, `lakhely`, `kor`, `egeszsegallapot`, `vegzettseg`) VALUES
-(2, 'Igen, és tudom, mire való', 'Orvostól, dietetikustól', 'Szomszédos ország', 'Szomszédos ország', 'Férfi', 'Nagyváros / városközpont', '18–25 év', 'Jó', 'Középiskola / érettségi'),
-(3, 'Igen, és tudom, mire való', 'Egyéb / nem tudom', 'Szomszédos ország', 'Szomszédos ország', 'Nem szeretném megadni', 'Nagyváros / városközpont', '18–25 év', 'Közepes', 'Felsőfokú szakképzés'),
-(4, 'Igen, de nem tudom pontosan', 'Közösségi médiából / fórumokról', 'Magyar', 'Magyarország', 'Férfi', 'Nagyváros / városközpont', '18–25 év', 'Rossz', 'Felsőfokú szakképzés');
+(2, 'Igen, és tudom, mire való', 'Orvostól, dietetikustól', 'Szomszédos ország', 'Szomszédos ország', 'Férfi', 'Nagyváros / városközpont', '18-25 év', 'Jó', 'Középiskola / érettségi'),
+(3, 'Igen, és tudom, mire való', 'Egyéb / nem tudom', 'Szomszédos ország', 'Szomszédos ország', 'Nem szeretném megadni', 'Nagyváros / városközpont', '18-25 év', 'Közepes', 'Felsőfokú szakképzés'),
+(4, 'Igen, de nem tudom pontosan', 'Közösségi médiából / fórumokról', 'Magyar', 'Magyarország', 'Férfi', 'Nagyváros / városközpont', '18-25 év', 'Rossz', 'Felsőfokú szakképzés');
 
 --
 -- Indexek a kiírt táblákhoz

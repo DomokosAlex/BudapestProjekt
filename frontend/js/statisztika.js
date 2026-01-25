@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     async function fetchAdat() {
 
-        const response = await fetch('http://localhost:3000/statisztikak');
+        const response = await fetch('/statisztikak');
         const data = await response.json();
         const tarto = document.getElementById("abracont")
 

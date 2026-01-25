@@ -113,7 +113,7 @@ function Befejezes() {
 
 
 function sendResultsToBackend() {
-    fetch('http://localhost:3000/kerdoiv', {
+    fetch('/kerdoiv', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
