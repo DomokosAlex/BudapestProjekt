@@ -9,7 +9,6 @@ window.addEventListener('load', () => {
 
 function kerdes_felteves(i) {
     const area = document.getElementById("questionArea");
-
     // védelem hibás indexek ellen
     if (i === -1 || i === null || i === undefined) {
         if (area) area.innerHTML = "";
@@ -22,16 +21,17 @@ function kerdes_felteves(i) {
 
     const q = kerdesek_tomb[i];
     const selected = q.valasztott;
+    document.getElementById("cim").innerHTML = `${q.szoveg}`;
 
-    let html = `<h3 class="mb-3">${q.szoveg}</h3>`;
-    html += `<form id="Form">`;
+    let html = ``;
+
     q.valaszok.forEach((v, idx) => {
         const checked = (selected === idx) ? "checked" : "";
         html += `<label class="d-block h4">
         <input type="radio" name="valasz" value="${idx}" class="big-radio" ${checked}> ${v}
         </label>`;
     });
-    html += `</form>`;
+
     if (area) area.innerHTML = html;
 
     document.querySelectorAll('input[name="valasz"]').forEach(r => {
@@ -46,12 +46,14 @@ function kerdes_felteves(i) {
 async function Elso_Oldal() {
 
     if (kerdesek_tomb.length === 0) {
-        const response = await fetch('/api/questions');
+        const response = await fetch('/api/ajanlas_kerd');
         kerdesek_tomb = await response.json();
     }
 
     const root = document.getElementById("Kerdesek");
     root.innerHTML = `
+     <h1 id="cim" class=" mt-4 text-center p3">Glicinteszt – Vizsgáld meg a glicinmennyiséged!</h1>
+    <hr>
         <div class="row pt-5">
             <div class="col-md-4">
                 <div class="mb-4">
@@ -75,12 +77,9 @@ async function Elso_Oldal() {
             <div class="col-md-8"></div>
         </div>
 
-        <div class="mt-3 p-3">
             <div id="helyzet" class="mt-2 text-center"></div>
-        </div>
 
-        <br>
-        <div class="text-end">
+        <div class="text-end p-3">
             <button class="btn btn-secondary btn-lg" onclick="Elozo()">Előző</button>
             <button class="btn btn-success btn-lg" id="kov" onclick="Kovetkezo()">Következő</button>
         </div>`;
@@ -90,7 +89,7 @@ async function Elso_Oldal() {
     const mgEl = document.getElementById("magassag");
 
     if (userMeta.nem) nemEl.value = userMeta.nem;
-    if (userMeta.testsuly !== null && userMeta.testsuly >=20 || userMeta.testsuly < 300) tsEl.value = userMeta.testsuly;
+    if (userMeta.testsuly !== null && userMeta.testsuly >= 20 || userMeta.testsuly < 300) tsEl.value = userMeta.testsuly;
     if (userMeta.magassag !== null && userMeta.testsuly >= 50 || userMeta.testsuly < 240) mgEl.value = userMeta.magassag;
 
 
@@ -114,17 +113,11 @@ function renderAll() {
     const szoveg = (currentIndex === kerdesek_tomb.length - 1) ? "Befejezés" : "Következő";
 
     root.innerHTML = `
-    <div class="row mb-2">
-        <div class="col-md-6">
-            <div id="questionArea"></div>
-        </div>
-    </div> 
-    <div class="mt-3 p-3">
-        <div id="helyzet" class="mt-2 text-center"></div>
-    </div>
-
-    <br>
-    <div class="text-end">
+     <h1 id="cim" class=" mt-4 text-center p3"></h1>
+    <hr>
+        <form id="questionArea" class="p-3 g-3"></form>
+    <div id="helyzet" class="mt-2 text-center"></div>
+    <div class="text-end p-3">
         <button class="btn btn-secondary btn-lg" onclick="Elozo()">Előző</button>
         <button class="btn btn-success btn-lg" id="kov" onclick="Kovetkezo()">${szoveg}</button>
     </div>`;
@@ -144,8 +137,6 @@ function navigacios_gomb() {
         const cls = (idx === currentIndex) ? "btn-success" : (k.megcsinalta) ? "btn-secondary" : "btn-warning";
         helyzet.innerHTML += `<button class="btn m-1 p-2 col-1 ${cls}" onclick="ugras(${idx})">${k.id}</button>`;
     });
-
-
 }
 
 function Kovetkezo() {
@@ -158,10 +149,7 @@ function Kovetkezo() {
     }
 
     const selected = document.querySelector('input[name="valasz"]:checked');
-    if (!selected) {
-        alert("Válassz egy választ, vagy használd a kérdésszám gombokat.");
-        return;
-    }
+    if (!selected) { return alert("Válassz egy választ, vagy használd a kérdésszám gombokat.");}
 
     kerdesek_tomb[currentIndex].valasztott = parseInt(selected.value);
     kerdesek_tomb[currentIndex].megcsinalta = true;
@@ -169,7 +157,6 @@ function Kovetkezo() {
     if (currentIndex === kerdesek_tomb.length - 1) {
         if (kerdesek_tomb.every(q => q.megcsinalta || q.valasztott !== null)) {
             alert("Lejebb görgetve megtekintheti az eredményét")
-            //Befejezes();
             sendResultsToBackend();
             return;
         } else {

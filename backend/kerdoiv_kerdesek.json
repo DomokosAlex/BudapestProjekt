@@ -1,0 +1,194 @@
+[
+    {
+        "id": 1,
+        "kerdes": "Hallott-e már a glicin aminósavról?",
+        "valaszlehetosegek": [
+            {
+                "valasz": "Igen, és tudom, mire való"               
+            },
+            {
+                "valasz": "Igen, de nem tudom pontosan"               
+            },
+            {
+                "valasz": "Nem, még soha nem hallottam"          
+            },
+            {
+                "valasz": "Először az oldalunkon olvastam róla"              
+            }
+        ], 
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 2,
+        "kerdes": "Ha hallott róla, honnan szerezte az információt?",
+        "valaszlehetosegek": [
+            {
+                "valasz": "Orvostól, dietetikustól"               
+            },
+            {
+                "valasz": "Egészségügyi / tudományos oldalról"               
+            },
+            {
+                "valasz": "Baráttól, ismerőstől"          
+            },
+            {
+                "valasz": "Közösségi médiából / fórumokról"              
+            },
+            {
+                "valasz": "Oldalunkról"          
+            },
+            {
+                "valasz": "Nem hallottam"              
+            }
+        ], 
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 3,
+        "kerdes": "Milyen nemzetiségű?",
+        "valaszlehetosegek": [
+            {
+                "valasz": "Magyar"               
+            },
+            {
+                "valasz": "Szomszédos ország"               
+            },
+            {
+                "valasz": "Egyéb"          
+            }
+        ], 
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id":4,
+        "kerdes": "Hol él jelenleg?",
+        "valaszlehetosegek": [
+            {
+                "valasz": "Magyarország"               
+            },
+            {
+                "valasz": "Szomszédos ország"               
+            },
+            {
+                "valasz": "Más, távolabbi ország"          
+            }
+        ], 
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 5,
+        "kerdes": "Mi a neme?",
+        "valaszlehetosegek": [
+            {
+                "valasz": "Férfi"               
+            },
+            {
+                "valasz": "Nő"               
+            },
+            {
+                "valasz": "Nem szeretném megadni"          
+            },
+            {
+                "valasz": "Egyéb"          
+            }
+        ], 
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 6,
+        "kerdes": "Milyen jellegű településen él?",
+        "valaszlehetosegek": [
+            {
+                "valasz": "Nagyváros / városközpont"               
+            },
+            {
+                "valasz": "Külváros"               
+            },
+            {
+                "valasz": "Kisváros"          
+            },
+            {
+                "valasz": "Vidék / falu"          
+            }
+        ], 
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 7,
+        "kerdes": "Milyen korosztályba tartozik ?",
+        "valaszlehetosegek": [
+            {
+                "valasz": "18 év alatti"               
+            },
+            {
+                "valasz": "18-25 év"               
+            },
+            {
+                "valasz": "26-35 év"          
+            },
+            {
+                "valasz": "36-45 év"          
+            },
+            {
+                "valasz": "46-60 év"          
+            },
+            {
+                "valasz": "61 év és feljebb"          
+            }
+        ], 
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 8,
+        "kerdes": "Hogyan jellemezné az egészségi állapotát?",
+        "valaszlehetosegek": [
+            {
+                "valasz": "Kiváló"               
+            },
+            {
+                "valasz": "Jó"               
+            },
+            {
+                "valasz": "Közepes"          
+            },
+            {
+                "valasz": "Rossz"          
+            },
+            {
+                "valasz": "Nagyon rossz"          
+            }
+        ], 
+        "megcsinalta": false,
+        "valasztott": null
+    },
+    {
+        "id": 9,
+        "kerdes": "Mi a legmagasabb iskolai végzettsége?",
+        "valaszlehetosegek": [
+            {
+                "valasz": "Általános iskola"               
+            },
+            {
+                "valasz": "Középiskola / érettségi"               
+            },
+            {
+                "valasz": "Felsőfokú szakképzés"          
+            },
+            {
+                "valasz": "Egyetem / főiskola"          
+            },
+            {
+                "valasz": "Posztgraduális"          
+            }
+        ], 
+        "megcsinalta": false,
+        "valasztott": null
+    }
+]

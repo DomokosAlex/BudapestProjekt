@@ -58,7 +58,7 @@ app.get('/statisztikak', (req, res) => {
 
 const ajanl_kerd = require('./ajanlas_kerdesek');
 
-app.get('/api/questions', (req, res) => {
+app.get('/api/ajanlas_kerd', (req, res) => {
     // Csak a kérdést és a válaszlehetőségek szövegét küldjük el
     const biztonsagosAdat = ajanl_kerd.map(q => ({
         id: q.id,
@@ -97,6 +97,21 @@ app.post('/api/kiertekeles', async(req, res) => {
 
 });
 
+
+
+const kerdoiv_kerd = require('./kerdoiv_kerdesek.json');
+
+app.get('/api/kerdoiv_kerd', (req, res) => {
+    // Csak a kérdést és a válaszlehetőségek szövegét küldjük el
+    const biztonsagosAdat = kerdoiv_kerd.map(q => ({
+        id: q.id,
+        szoveg: q.kerdes,
+        valaszok: q.valaszlehetosegek.map(v => v.valasz), // Csak a szöveg megy át!
+        megcsinalta: q.megcsinalta,
+        valasztott: q.valasztott
+    }));
+    res.json(biztonsagosAdat);
+});
 
 
 app.listen(3000, () => console.log('Server running on http://localhost:3000'));
