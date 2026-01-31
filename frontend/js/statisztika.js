@@ -2,9 +2,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     async function fetchAdat() {
 
-        const response = await fetch('/statisztikak');
+        const response = await fetch('http://localhost:3000/statisztikak');
         const data = await response.json();
         const tarto = document.getElementById("abracont")
+
+
+        const kerdesekresponse = await fetch('http://localhost:3000/statisztika/kerdesek');
+        const kerdesek = await kerdesekresponse.json();
+
 
         const adatok = diagramadat(kerdesek, data)
 
@@ -12,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
         var row = document.createElement("div");
         row.className = "row gx-1 my-4";
 
-    
+
 
 
         for (let i = 0; i < felirat.length; i++) {
@@ -39,15 +44,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 type: 'pie',
                 data: {
                     labels: Object.keys(adatok[felirat[i]]),
-                    
+
                     datasets: [{
                         data: Object.values(adatok[felirat[i]]),
                     }]
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false, 
-        
+                    maintainAspectRatio: false,
+
                     plugins: {
                         legend: {
                             labels: {
@@ -57,31 +62,22 @@ window.addEventListener("DOMContentLoaded", () => {
                                 }
                             }
                         }
-                    }, 
+                    },
 
-                    
+
                 }
 
-                
+
             });
 
             nem.update();
-            
+
         }
 
     }
 
     function diagramadat(kerdesek, data) {
         const res = {};
-
-
-        kerdesek.forEach(k => {
-            res[k.tipus] = {};
-            k.valaszok.forEach(option => {
-                res[k.tipus][option] = 0;
-            });
-        });
-
 
         const map = {
             hallott: "Hallott-e",
@@ -95,21 +91,29 @@ window.addEventListener("DOMContentLoaded", () => {
             vegzettseg: "Végzettség"
         };
 
+        const mapKeys = Object.keys(map);
 
-        data.forEach(row => {
-            for (const [field, tipus] of Object.entries(map)) {
-                const valasz = row[field];
-                if (res[tipus] && res[tipus][valasz] !== undefined) {
-                    res[tipus][valasz]++;
-                }
-            }
+        kerdesek.forEach((k, i) => {
+            const title = map[mapKeys[i]];
+            res[title] = {};
+            k.valaszok.forEach(option => {
+                res[title][option] = 0;
+            });
         });
 
+        data.forEach(row => {
+            mapKeys.forEach((field, i) => {
+                const title = map[field];
+                const valasz = row[field];
+                if (valasz !== undefined && res[title] && res[title][valasz] !== undefined) {
+                    res[title][valasz]++;
+                }
+            });
+        });
 
         return res;
     }
 
+
     fetchAdat();
 });
-
-

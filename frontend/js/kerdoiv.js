@@ -1,5 +1,5 @@
 let index = 0;
-const kitoltes_eredmeny = {};
+
 let kerdesek_tomb = [];
 
 window.addEventListener("load", function () {
@@ -18,7 +18,6 @@ async function Betoltes(i) {
     }
 
     const oldal = document.getElementById("Kerdesek");
-    //const adat = kerdesek[i];
     const adat = kerdesek_tomb[i]
     oldal.innerHTML = `
         <h1 class="mt-4 p3 text-center">${adat.szoveg}</h1>
@@ -108,8 +107,7 @@ function Kovetkezo() {
 
     adat.megcsinalta = true;
     adat.valasztott = valIndex;
-    kitoltes_eredmeny[adat.id] = adat.valaszok[valIndex];
-    //kitoltes_eredmeny[adat.id] = valIndex;
+    
 
     if (index == kerdesek_tomb.length - 1 && kerdesek_tomb.every(n => n.megcsinalta)) {
 
@@ -155,7 +153,6 @@ function Befejezes() {
 
 
 function sendResultsToBackend() {
-    console.log(kitoltes_eredmeny)
 
     const bekuldeniValo = {
         valaszok: kerdesek_tomb.map(q => ({

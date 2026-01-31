@@ -4,6 +4,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const mysql = require('mysql2');
 
+const { ValidalasKerdoiv, ValidalasAjanlas } = require('./Validalas');
+
+const kerdesek_json = require("./kerdoiv_kerdesek.json");
+const ajan_kerdesek = require("./ajanlas_kerdesek.json");
+
+
 app.use(bodyParser.json());
 
 const connection = mysql.createConnection({
@@ -19,13 +25,31 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 app.post('/kerdoiv', (req, res) => {
 
-    const query = 'INSERT INTO kerdoiv (halott, haigenhonnan, nemzetiseg, orszag, nem, lakhely, kor, egeszsegallapot, vegzettseg) VALUES (?, ?, ?, ?, ?, ?,?, ?, ?)';
-    const values = [req.body[1], req.body[2], req.body[3], req.body[4], req.body[5], req.body[6], req.body[7], req.body[8], req.body[9]];
+    const query = 'INSERT INTO kerdoiv (hallott, haigenhonnan, nemzetiseg, orszag, nem, lakhely, kor, egeszsegallapot, vegzettseg) VALUES (?, ?, ?, ?, ?, ?,?, ?, ?)';
 
-    connection.query(query, values, (err) => {
-        if (err) return res.status(500).send('Hiba történt: ' + err);
-        res.json({ status: 'ok' });
-    });
+    if (ValidalasKerdoiv(req.body.valaszok)) {
+
+        const values = [];
+
+        for (let i = 0; i < req.body.valaszok.length; i++) {
+            values.push(kerdesek_json[i].valaszlehetosegek[req.body.valaszok[i].valasztott].valasz);
+
+        }
+
+
+        connection.query(query, values, (err) => {
+            if (err) return res.status(500).send('Hiba történt: ' + err);
+            res.json({ status: 'ok' });
+        });
+
+    } else {
+        //HA A VALIDALAS AZT MONDJA HIBA VAN
+
+    }
+
+
+
+
 
 });
 
@@ -51,10 +75,16 @@ app.get('/statisztikak', (req, res) => {
     connection.query('SELECT * FROM kerdoiv', (err, results) => {
         if (err) return res.send('Hiba történt: ' + err);
         res.json(results);
+        
     });
 });
 
 
+app.get('/statisztika/kerdesek', (req, res) => {
+    res.json(kerdesek_json.map(q => ({
+        valaszok: q.valaszlehetosegek.map(v => v.valasz)
+    })));
+});
 
 const ajanl_kerd = require('./ajanlas_kerdesek');
 
@@ -73,23 +103,27 @@ app.get('/api/ajanlas_kerd', (req, res) => {
 
 
 
-app.post('/api/kiertekeles', async(req, res) => {
+app.post('/api/kiertekeles', async (req, res) => {
     try {
         const { meta, valaszok } = req.body;
         const add = require('./ajanlas_eredmenysamitas');
         const { vegeredmeny } = await add.Befejezes(meta, valaszok, connection)
 
-
         const query = 'INSERT INTO ajanlas (kod,jelzo, leiras,tanacs,status,bmi) VALUES (?,?,?,?,?,?)';
-        const values = [vegeredmeny.kod, vegeredmeny.jelzo,vegeredmeny.leiras ,vegeredmeny.tanacs, vegeredmeny.status, vegeredmeny.bmi];
+        const values = [vegeredmeny.kod, vegeredmeny.jelzo, vegeredmeny.leiras, vegeredmeny.tanacs, vegeredmeny.status, vegeredmeny.bmi];
 
-        connection.query(query, values, (err) => {
+        if (ValidalasAjanlas(valaszok)) {
+            connection.query(query, values, (err) => {
             if (err) {
                 console.error("DB hiba:", err);
                 return res.status(500).json({ error: 'Hiba történt az adatbázis művelet közben.' });
             }
             res.json({ status: 'ok', adatok: vegeredmeny });
         });
+        } else {
+            console.log(false)
+        }
+        
     } catch (error) {
         console.error("Hiba:", error);
         res.status(500).json({ error: "Hiba a kiértékelés során." });
@@ -99,11 +133,10 @@ app.post('/api/kiertekeles', async(req, res) => {
 
 
 
-const kerdoiv_kerd = require('./kerdoiv_kerdesek.json');
 
 app.get('/api/kerdoiv_kerd', (req, res) => {
     // Csak a kérdést és a válaszlehetőségek szövegét küldjük el
-    const biztonsagosAdat = kerdoiv_kerd.map(q => ({
+    const biztonsagosAdat = kerdesek_json.map(q => ({
         id: q.id,
         szoveg: q.kerdes,
         valaszok: q.valaszlehetosegek.map(v => v.valasz), // Csak a szöveg megy át!

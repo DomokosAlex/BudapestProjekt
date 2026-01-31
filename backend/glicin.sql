@@ -52,7 +52,7 @@ INSERT INTO `ajanlas` (`id`, `kod`, `leiras`, `tanacs`, `status`, `bmi`) VALUES
 
 CREATE TABLE `kerdoiv` (
   `id` int(11) NOT NULL,
-  `halott` varchar(255) DEFAULT NULL,
+  `hallott` varchar(255) DEFAULT NULL,
   `haigenhonnan` varchar(255) DEFAULT NULL,
   `nemzetiseg` varchar(255) DEFAULT NULL,
   `orszag` varchar(255) DEFAULT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE `kerdoiv` (
 -- A tábla adatainak kiíratása `kerdoiv`
 --
 
-INSERT INTO `kerdoiv` (`id`, `halott`, `haigenhonnan`, `nemzetiseg`, `orszag`, `nem`, `lakhely`, `kor`, `egeszsegallapot`, `vegzettseg`) VALUES
+INSERT INTO `kerdoiv` (`id`, `hallott`, `haigenhonnan`, `nemzetiseg`, `orszag`, `nem`, `lakhely`, `kor`, `egeszsegallapot`, `vegzettseg`) VALUES
 (2, 'Igen, és tudom, mire való', 'Orvostól, dietetikustól', 'Szomszédos ország', 'Szomszédos ország', 'Férfi', 'Nagyváros / városközpont', '18-25 év', 'Jó', 'Középiskola / érettségi'),
 (3, 'Igen, és tudom, mire való', 'Egyéb / nem tudom', 'Szomszédos ország', 'Szomszédos ország', 'Nem szeretném megadni', 'Nagyváros / városközpont', '18-25 év', 'Közepes', 'Felsőfokú szakképzés'),
 (4, 'Igen, de nem tudom pontosan', 'Közösségi médiából / fórumokról', 'Magyar', 'Magyarország', 'Férfi', 'Nagyváros / városközpont', '18-25 év', 'Rossz', 'Felsőfokú szakképzés');
