@@ -1,0 +1,10 @@
+User-agent: *
+
+Allow: /img/
+Allow: /*.html$
+Allow: /
+
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://glicinhub.eu/sitemap.xml
