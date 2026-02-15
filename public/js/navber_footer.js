@@ -1,44 +1,34 @@
 const nav = document.getElementById("Nav");
 
 nav.innerHTML = `
-    <nav class="navbar navbar-expand-lg " id="navbg">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav w-100 d-flex justify-content-evenly mb-2 mb-lg-0">
+   <nav class="navbar navbar-expand-lg navbar-dark" id="navbg">
+    <div class="container-fluid">
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                    <li class="nav-item "><a class="nav-link" href="#"><button
-                                class="border-bottom btn btn-lg text-white meret p-2">Dokumentáció</button></a></li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav w-100 d-flex justify-content-evenly">
+                <li class="nav-item"><a class="nav-link" href="#"><span>Dokumentáció</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./tarsak.html"><span>Társelemek</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./index.html"><span>Főoldal</span></a></li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Tesztek</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./kerdoiv.html">Kérdőív</a></li>
+                        <li><a class="dropdown-item" href="./ajanlas.html">Glicin Teszt</a></li>
+                    </ul>
+                </li>
 
-                    <li class="nav-item "><a class="nav-link" href="./tarsak.html"><button
-                                class="border-bottom btn btn-lg text-white meret">Társelemek</button></a></li>
-
-                    <li class="nav-item"><a class="nav-link" href="./index.html"><button
-                                class="border-bottom btn btn-lg text-white meret">Főoldal</button></a></li>
-
-                    <li class="nav-item dropdown p-2">
-                        <a class=" border-bottom  btn btn-lg text-white meret dropdown-toggle " href="#" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Tesztek
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./kerdoiv.html">Kérdőív</a></li>
-                            <li><a class="dropdown-item" href="./ajanlas.html">Glicin Teszt</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link" href="./statisztikak.html"><button
-                                class="border-bottom btn btn-lg text-white meret">Statisztika</button></a></li>
-
-                    <li class="nav-item"><a class="nav-link" href="./tudomanyhatter.html"><button
-                                class="border-bottom btn btn-lg text-white meret">Források</button></a></li>
-                </ul>
-            </div>
+                <li class="nav-item"><a class="nav-link" href="./statisztikak.html"><span>Statisztika</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./tudomanyhatter.html"><span>Források</span></a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
 `
 

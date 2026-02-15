@@ -1,36 +1,26 @@
-html {
-  min-height: 100%;
-}
+html {min-height: 100%;}
 
 body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: "Kanit";
+  font-family: "Kanit" /*sans-serif*/;
+  font-display: swap;
   background: linear-gradient(#4170fa, rgb(10, 11, 12)) no-repeat;
   background-size: cover;
-
 }
-
-img{
-  width: 300px;
-  height: 300px;
-}
+.hr-w { width: 90%;}
 
 a {
-  text-decoration: underline;
+  color: white;
+  text-decoration: none;
 }
 
-
 a:hover {
-
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
 
-.hr-w {
-  width: 90%;
-}
 
 #navbg {
   background: rgba(30, 40, 80, 0.8);
@@ -39,67 +29,66 @@ a:hover {
   width: 100%;
 }
 
-#Adatved{
-  background: rgba(30, 40, 80, 0.8);
+.nav-link {
+  color: #fff !important;
+  font-size: 1.25rem;
+  transition: 0.3s;
+  padding: 10px 20px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-a {
-  color: white;
-  text-decoration: none;
+.nav-link:hover {
+  transform: translateY(-4px);
+}
+
+.nav-link span {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link span::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  background: #00d4ff;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+.nav-link:hover span::after {
+  width: 100%;
+}
+
+.dropdown-menu {
+  background: #1e2850;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-item {
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.dropdown-item:hover {
+  background: rgba(30, 40, 80,1);
+  color: #00d4ff;
+  
 }
 
 section.hero {
   height: 100vh;
-
-
-}
-
-#miaminosavgif {
-  width: 65%;
-  height: 90%;
-  border-radius: 10px;
-}
-
-
-#glicingif {
-  width: 55%;
-  height: 85%;
-  border-radius: 10px;
-}
-
-.big-radio {
-  transform: scale(1.5);
-  margin-right: 5px;
-}
-
-.meret {
-  width: 150px;
 }
 
 main {
   padding-top: 90px;
 }
 
-.chart-cont {
-  height: 35vh;
-}
-
-.pozitiv-szin {
-  color: rgb(5, 247, 5);
-}
-
-.section-title {
-  border-left: 4px solid #3498db;
-  padding-left: 15px;
-}
-
-.card-custom {
-  background: #1c1c1c;
-  border: 1px solid #333;
-  transition: transform 0.2s;
-}
-
-.card-custom:hover {
-  transform: translateY(-5px);
-  border-color: #474747;
+.big-radio {
+  transform: scale(1.5);
+  margin-right: 5px;
 }
