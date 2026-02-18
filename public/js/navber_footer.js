@@ -30,15 +30,12 @@ nav.innerHTML = `
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="./statisztikak.html"><button
-                                class="border-bottom btn btn-lg text-white meret">Statisztika</button></a></li>
-
-                    <li class="nav-item"><a class="nav-link" href="./tudomanyhatter.html"><button
-                                class="border-bottom btn btn-lg text-white meret">Források</button></a></li>
-                </ul>
-            </div>
+                <li class="nav-item"><a class="nav-link" href="./statisztikak.html"><span>Statisztika</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./tudomanyhatter.html"><span>Források</span></a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
 `
 
