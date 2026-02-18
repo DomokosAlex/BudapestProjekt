@@ -10,7 +10,7 @@ nav.innerHTML = `
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav w-100 d-flex justify-content-evenly mb-2 mb-lg-0">
 
-                    <li class="nav-item "><a class="nav-link" href="#"><button
+                    <li class="nav-item "><a class="nav-link" href="./dokumentacio.html"><button
                                 class="border-bottom btn btn-lg text-white meret p-2">Dokumentáció</button></a></li>
 
                     <li class="nav-item "><a class="nav-link" href="./tarsak.html"><button
