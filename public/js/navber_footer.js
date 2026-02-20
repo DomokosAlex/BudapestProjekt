@@ -3,7 +3,7 @@ const nav = document.getElementById("Nav");
 nav.innerHTML = `
    <nav class="navbar navbar-expand-lg navbar-dark" id="navbg">
     <div class="container-fluid">
-        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-label="Menü megnyitása">
             <span class="navbar-toggler-icon"></span>
         </button>
 
