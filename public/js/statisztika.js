@@ -82,15 +82,15 @@ window.addEventListener("DOMContentLoaded", () => {
         const res = {};
 
         const map = {
-            hallott: "Hallott-e",
-            haigenhonnan: "Honnan hallott",
-            nemzetiseg: "Nemzetiség",
-            orszag: "Ország",
-            nem: "Nem",
-            lakhely: "Lakhely",
-            kor: "Életkor",
-            egeszsegallapot: "Egészségi állapot",
-            vegzettseg: "Végzettség"
+            hallott: "A glicin ismertsége",
+            haigenhonnan: "A glicinről szerzett információ forrása",
+            nemzetiseg: "A kitöltők nemzetiségi megolszlása",
+            orszag: "A kitöltők ország szerinti megolszlása",
+            nem: "A kitöltők nem szerinti megolszlása",
+            lakhely: "A kitöltők lakóhely-típus szerinti megolszlása",
+            kor: "A kitöltők életkori szerinti megolszlása",
+            egeszsegallapot: "Önértékelt egészségi állapot",
+            vegzettseg: "Legmagasabb iskolai végzettség megolszlása"
         };
 
         const mapKeys = Object.keys(map);

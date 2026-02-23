@@ -1,0 +1,13 @@
+.tarto {
+    position: relative;
+}
+
+.tarto::before {
+    content: "⬤";
+    color: white;
+    position: absolute;
+    top: 20%;
+    transform: translateX(-178%);
+
+    font-size: 1.5rem;
+}
