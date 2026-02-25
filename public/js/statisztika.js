@@ -17,31 +17,74 @@ window.addEventListener("DOMContentLoaded", () => {
         var row = document.createElement("div");
         row.className = "row gx-1 my-4";
 
-
+        const colors = [
+            "#d85050",
+            "#f28e2b",
+            "#57bd54",
+            "#45ddd0",
+            "#b31583",
+            "#411aee"
+        ];
 
 
         for (let i = 0; i < felirat.length; i++) {
-            if (i % 3 == 0) {
-                row = document.createElement("div");
-                row.className = "row gx-1";
-                tarto.appendChild(row);
+
+            if (i % 3 === 0) {
+                var tartorow = document.createElement("div");
+                tartorow.className = "row gx-1 mb-1";
+
             }
 
+            const tartonbeluldiv = document.createElement("div");
+            tartonbeluldiv.className = "col-md-4 col-sm-12";
 
-            const col = document.createElement("div");
+            var titlefelirat = document.createElement("h3");
+            titlefelirat.className = "text-center d-flex justify-content-center align-items-center";
+            titlefelirat.innerHTML = `${felirat[i]}`;
+            tartonbeluldiv.appendChild(titlefelirat);
 
-            col.className = "col-md-4 col-sm-12 mb-5"
+            var chartCol = document.createElement("div");
+            chartCol.innerHTML = `<canvas id="${i}"></canvas>`;
+            tartonbeluldiv.appendChild(chartCol);
+            tartorow.appendChild(tartonbeluldiv);
 
-            col.innerHTML += `
-      <h3 class="text-center">${felirat[i]}</h3>
-      <div class="d-flex justify-content-center chart-cont">
-      <br>
-        <canvas id="${i}"></canvas>
-        
-      </div>
-    `;
+            var legendtarto = document.createElement("div");
+            legendtarto.className = "d-flex justify-content-center";
 
-            row.appendChild(col);
+            var legend = document.createElement("ul");
+            legend.className = "fs-4";
+
+
+            Object.keys(adatok[felirat[i]]).forEach((e, i) => {
+                var legendlabel = document.createElement("li");
+                var legendszovegtarto = document.createElement("p");
+                var kockaszin = document.createElement("span");
+
+                kockaszin.style.display = "inline-block";
+                kockaszin.style.width = "15px";
+                kockaszin.style.height = "15px";
+                kockaszin.style.marginRight = "8px";
+                kockaszin.style.borderRadius = "3px";
+                kockaszin.style.border = "white 1px solid";
+                kockaszin.style.backgroundColor = colors[i];
+
+                legendlabel.appendChild(kockaszin);
+                legendszovegtarto.textContent = e;
+                legendszovegtarto.style.display = "inline";
+                legendlabel.style.listStyle = "none";
+
+                legendlabel.appendChild(legendszovegtarto);
+
+                legend.appendChild(legendlabel);
+            });
+
+
+
+            legendtarto.appendChild(legend);
+
+            tartonbeluldiv.appendChild(legendtarto);
+
+            tarto.appendChild(tartorow);
             var nem = new Chart(document.getElementById(i), {
                 type: 'pie',
                 data: {
@@ -49,6 +92,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
                     datasets: [{
                         data: Object.values(adatok[felirat[i]]),
+                        radius: 110,
+                        backgroundColor: colors
                     }]
                 },
                 options: {
@@ -57,14 +102,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
                     plugins: {
                         legend: {
-                            labels: {
-                                color: 'white', // jelmagyarázat színe
-                                font: {
-                                    size: 13.2
-                                }
-                            }
+                            display: false,
                         }
-                    },
+                    }
 
 
                 }
@@ -72,11 +112,27 @@ window.addEventListener("DOMContentLoaded", () => {
 
             });
 
+
+
+
             nem.update();
+
 
         }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     function diagramadat(kerdesek, data) {
         const res = {};
