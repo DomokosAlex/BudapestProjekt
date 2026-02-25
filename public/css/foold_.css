@@ -19,7 +19,3 @@
     object-fit: contain;
     pointer-events: none;
 }
-#ar {
-    content-visibility: auto;
-    contain-intrinsic-size: 500px; 
-}

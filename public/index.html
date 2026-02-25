@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" as="style">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <!--Stilus-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,11 +30,10 @@
     </script>
 
 
-    <meta name="description"
-        content="L‑glicin: hatásai, alkalmazása és tudományos háttér. Tájékoztató cikk a glicin szerepéről az alvás, máj‑méregtelenítés és kollagén szintézis területén.">
+    <meta name="description" content="L‑glicin: hatásai, alkalmazása és tudományos háttér. Tájékoztató cikk a glicin szerepéről az alvás, máj‑méregtelenítés és kollagén szintézis területén.">
 
     <!-- Canonical: egyetlen, következetes URL -->
-    <link rel="canonical" href="https://glicinhub.eu/" />
+    <link rel="canonical" href="https://glicinhub.eu/index.html" />
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
@@ -47,7 +44,7 @@
     <meta property="og:url" content="https://glicinhub.eu">
     <meta property="og:site_name" content="GlicinHub">
     <meta property="og:locale" content="hu_HU">
-    <meta property="og:image" content="https://glicinhub.eu/img/og-glicinhub.webp">
+    <meta property="og:image" content="https://domain.hu/logo.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/webp">
@@ -58,15 +55,15 @@
         "@graph": [
             {
               "@type": "WebSite",
-             "@id": "https://glicinhub.eu/#website",
-              "url": "https://glicinhub.eu/",
+              "@id": "https://glicinhub.eu/index.html#website",
+              "url": "https://glicinhub.eu/index.html",
               "name": "GlicinHub",
               "publisher": { "@id": "https://glicinhub.eu/#article" },
               "inLanguage": "hu-HU"
             },
             {
             "@type": "Article",
-            "@id": "https://glicinhub.eu/#article",
+            "@id": "https://glicinhub.eu/index.html#article",
             "headline": "L-glicin hatása az emberi szervezetre",
             "description": "Tudományos háttér a glicin szerepéről az alvásban és a regenerációban.",
             "image": "https://glicinhub.eu/img/og-glicinhub.webp",
@@ -78,6 +75,7 @@
             "@type": "BreadcrumbList",
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Főoldal", "item": "https://glicinhub.eu/" },
+                { "@type": "ListItem", "position": 2, "name": "Glicinhub", "item": "https://glicinhub.eu/index.html" }
             ]
             }
         ]
@@ -102,8 +100,7 @@
 
             <div class="row align-items-center ">
                 <div class="col-md-6 col-lg-5  ">
-                    <video aria-hidden="true" autoplay muted loop playsinline
-                        class="img-fluid rounded-3  video-container">
+                    <video autoplay muted loop playsinline class="img-fluid rounded-3 shadow-lg video-container">
                         <source src="./img/Aminopenicillanic.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -183,9 +180,8 @@
                 </div>
 
 
-                <div class="col-md-6 col-sm-12 " >
-                    <video aria-hidden="true" autoplay muted loop playsinline
-                        class="img-fluid rounded-3  video-container-2" loading="lazy">
+                <div class="col-md-6 col-sm-12 ">
+                    <video autoplay muted loop playsinline class="img-fluid rounded-3 shadow-lg video-container-2">
                         <source src="./img/Glycine .mp4" type="video/mp4">
                     </video>
                 </div>
@@ -201,7 +197,7 @@
             <div class="row">
                 <hr class="m-auto hr-w my-4">
             </div>
-            <h2 class="my-4">Az L-Glicin Hatásai</h2>
+            <h2 class="my-4">Hatások</h2>
             <div class="row">
 
                 <div class="col-md-6 col-lg-4 col-sm-12 my-2">
@@ -210,9 +206,9 @@
 
                             <div class="card-body">
                                 <div class="row">
-                                    <i class="fs-3 bi bi-moon-stars-fill "></i>
+                                    <h3><i class="bi bi-moon-stars-fill"></i></h3>
                                 </div>
-                                <h3 class="card-title fw-bold">Alvás</h3>
+                                <h4 class="card-title fw-bold">Alvás</h4>
                                 <p class="card-text">Több kutatás szerint 3 g lefekvés előtt csökkenti az elalvási időt,
                                     javítja az alvás mélységét.</p>
 
@@ -226,9 +222,9 @@
                         <div class="card m-3 h-100 ">
                             <div class="card-body">
                                 <div class="row">
-                                    <i class="fs-3 bi bi-lightning-fill"></i>
+                                    <h3><i class="bi bi-lightning-fill"></i></h3>
                                 </div>
-                                <h3 class="card-title fw-bold">Idegrendszer</h3>
+                                <h4 class="card-title fw-bold">Idegrendszer</h4>
                                 <p class="card-text">Gátló neurotranszmitterként működik az agyban és a gerincvelőben,
                                     segíthet ellazulni, csökkenteni a stresszt.</p>
 
@@ -241,9 +237,9 @@
                         <div class="card m-3 h-100 ">
                             <div class="card-body">
                                 <div class="row">
-                                    <i class="fs-3 bi bi-person-arms-up"></i>
+                                    <h3><i class="bi bi-person-arms-up"></i></h3>
                                 </div>
-                                <h3 class="card-title fw-bold">Izom és bőr egészsége</h3>
+                                <h4 class="card-title fw-bold">Izom és bőr egészsége</h4>
                                 <p class="card-text">A kollagén kb. 1/3-a glicin, tehát támogatja a bőr, ízületek,
                                     porcok és
                                     inak regenerációját.</p>
@@ -258,9 +254,9 @@
                         <div class="card m-3 h-100 ">
                             <div class="card-body">
                                 <div class="row">
-                                    <i class="fs-3 bi bi-bar-chart-fill"></i>
+                                    <h3><i class="bi bi-bar-chart-fill"></i></h3>
                                 </div>
-                                <h3 class="card-title fw-bold ">Vércukorszint</h3>
+                                <h4 class="card-title fw-bold ">Vércukorszint</h4>
                                 <p class="card-text">Segíthet stabilizálni az inzulinválaszt, lassítja a glükóz
                                     felszívódását.</p>
 
@@ -273,9 +269,9 @@
                         <div class="card m-3 h-100 ">
                             <div class="card-body">
                                 <div class="row">
-                                    <i class="fs-3 bi bi-droplet-half"></i>
+                                    <h3><i class="bi bi-droplet-half"></i></h3>
                                 </div>
-                                <h3 class="card-title fw-bold">Emésztés</h3>
+                                <h4 class="card-title fw-bold">Emésztés</h4>
                                 <p class="card-text">Az epesavak és a glutation egyik alkotóeleme, tehát segíti az
                                     emésztést
                                     és antioxidáns védelmet is biztosít.</p>
@@ -288,9 +284,9 @@
                         <div class="card m-3 h-100 ">
                             <div class="card-body">
                                 <div class="row">
-                                    <i class="fs-3 bi bi-recycle"></i>
+                                    <h3><i class="bi bi-recycle"></i></h3>
                                 </div>
-                                <h3 class="card-title fw-bold">Méregtelenítés</h3>
+                                <h4 class="card-title fw-bold">Méregtelenítés</h4>
                                 <p class="card-text">A májban részt vesz konjugációs reakciókban, segít eltávolítani
                                     toxikus
                                     anyagokat.</p>
@@ -361,7 +357,7 @@
                 <div class="row align-items-stretch">
                     <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-between p-4">
                         <div>
-                            <h2 class="my-4">Glicin Mérés</h2>
+                            <h2 class="my-4">Ajánlás</h2>
                             <h4 class="text-justify">A válaszai alapján személyre szabott ajánlást kaphat a
                                 glicinbevitelre és az étrendedre vonatkozóan. A cél, hogy megtudja, szüksége van-e
                                 kiegészítésre, vagy elegendő a jelenlegi beviteli szinted.</h4>
@@ -371,7 +367,7 @@
 
                     <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-between p-4">
                         <div>
-                            <h2 class="my-4">Glicin Kérdőív</h2>
+                            <h2 class="my-4">Kérdőív</h2>
                             <h4 class="text-justify">Kérjük töltse ki a kérdőívet, hogy megtudjuk, mennyire ismert az
                                 emberek körében a glicin aminosav.</h4>
                         </div>
@@ -400,7 +396,11 @@
                 <button type="button" class="border-bottom btn btn-lg text-white" id="elfogadom">Elfogadom</button>
 
             </div>
+
+
+
         </div>
+
 
 
 

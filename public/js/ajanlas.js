@@ -67,11 +67,11 @@ async function Elso_Oldal() {
                 </div>
                 <div class="mb-4 ">
                     <label class="form-label  h4">Testsúly (kg)</label>
-                    <input id="testsuly" type="number" name="testsuly" min="20" max="300" class="form-control" placeholder="65" pattern="[0-9]{3}}" >
+                    <input id="testsuly" type="number" min="20" max="300" class="form-control" >
                 </div>
                 <div class="mb-4  h4">
                     <label class="form-label">Magasság (cm)</label>
-                    <input id="magassag" type="number" name="magassag" min="50" max="260" class="form-control" placeholder="165" pattern="[0-9]{3}" >
+                    <input id="magassag" type="number" min="50" max="260" class="form-control" >
                 </div>
             </div>
             <div class="col-md-8"></div>
