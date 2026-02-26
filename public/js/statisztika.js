@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const tartonbeluldiv = document.createElement("div");
             tartonbeluldiv.className = "col-md-4 col-sm-12";
 
-            var titlefelirat = document.createElement("h3");
+            var titlefelirat = document.createElement("h2");
             titlefelirat.className = "text-center d-flex justify-content-center align-items-center";
             titlefelirat.innerHTML = `${felirat[i]}`;
             tartonbeluldiv.appendChild(titlefelirat);

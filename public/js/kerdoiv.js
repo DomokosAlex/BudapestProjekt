@@ -40,22 +40,6 @@ async function Betoltes(i) {
 
     Gombok();
 }
-/*
-function renderAll() {
-    const oldal = document.getElementById("Kerdesek");
-    const szoveg = (i === kerdesek_tomb.length - 1) ? "Befejezés" : "Következő";
-
-    oldal.innerHTML = `
-    <div class="text-center mt-2" id="helyzet"></div>
-        <div class="text-end p-3">
-            <button type="button" class="btn btn-secondary btn-lg" onclick="Elozo()">Előző</button>
-            <button type="button" class="btn btn-success btn-lg" onclick="Kovetkezo()">${szoveg}</button>
-        </div>
-        
-    `;
-    Gombok();
-}
-*/
 function Valasz_lehetosegek(adat) {
     const ker = document.getElementById("Form");
     ker.innerHTML = ``;
@@ -136,20 +120,28 @@ function Befejezes() {
     const oldal = document.getElementById("Kerdesek");
     oldal.innerHTML = `
         <h1 class="mt-4 p3 text-center">Köszönjük, hogy kitöltötte a tesztet!</h1>
+        <h2 class=" text-center">És hozzájárult a demográfiai adatokhoz </h2>
         <br>
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <h4>Ha szeretne, átmehet az ajánlás oldalra</h4>
-                    <a href="../html/ajanlas.html"><button class="btn btn-primary btn-lg">Ajánlás</button></a>
+         <div class="row align-items-stretch text-center" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-between p-4">
+                        <div>
+                            <h2 class="my-4">Glicin Mérés</h2>
+                            <h3 class="text-justify">Innen egyenesen továbmehet a Glicin mérés oldalra</h3>
+                        </div>
+                        <a href="./ajanlas" class="btn btn-primary btn-lg mt-3">Megmérem a glicinszintem</a>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-between p-4">
+                        <div>
+                            <h2 class="my-4">Vissza a Főoldalra</h2>
+                            <h3 class="text-justify">Ha nem szeretné kitőlteni a Glicin ajánlás tesztet akkor térjen vissza a főoldalra</h3>
+                        </div>
+                        <a href="./" class="btn btn-primary btn-lg mt-3">Irány a főoldal</a>
+                    </div>
                 </div>
-                <div class="col-6">
-                    <h4>Vagy visszatérhet a főoldalra</h4>
-                    <a href="../html/index.html"><button class="btn btn-primary btn-lg">Főoldal</button></a>
-                </div>
-            </div>
-        </div>
     `;
+
+
 
 }
 

@@ -67,11 +67,11 @@ async function Elso_Oldal() {
                 </div>
                 <div class="mb-4 ">
                     <label class="form-label  h4">Testsúly (kg)</label>
-                    <input id="testsuly" type="number" min="20" max="300" class="form-control" >
+                    <input id="testsuly" type="number" name="testsuly" min="20" max="400" class="form-control" placeholder="65" pattern="[0-9]{3}}" >
                 </div>
                 <div class="mb-4  h4">
                     <label class="form-label">Magasság (cm)</label>
-                    <input id="magassag" type="number" min="50" max="260" class="form-control" >
+                    <input id="magassag" type="number" name="magassag" min="20" max="260" class="form-control" placeholder="165" pattern="[0-9]{3}" >
                 </div>
             </div>
             <div class="col-md-8"></div>
@@ -149,7 +149,7 @@ function Kovetkezo() {
     }
 
     const selected = document.querySelector('input[name="valasz"]:checked');
-    if (!selected) { return alert("Válassz egy választ, vagy használd a kérdésszám gombokat.");}
+    if (!selected) { return alert("Válassz egy választ, vagy használd a kérdésszám gombokat."); }
 
     kerdesek_tomb[currentIndex].valasztott = parseInt(selected.value);
     kerdesek_tomb[currentIndex].megcsinalta = true;
