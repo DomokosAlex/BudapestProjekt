@@ -1,15 +1,22 @@
-html {min-height: 100%;}
+html {
+  min-height: 100%;
+}
 
 body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: "Kanit" /*sans-serif*/;
+  font-family: "Kanit"
+    /*sans-serif*/
+  ;
   font-display: swap;
   background: linear-gradient(#4170fa, rgb(10, 11, 12)) no-repeat;
   background-size: cover;
 }
-.hr-w { width: 90%;}
+
+.hr-w {
+  width: 90%;
+}
 
 a {
   color: white;
@@ -59,6 +66,7 @@ a:hover {
   transition: 0.3s;
   transform: translateX(-50%);
 }
+
 .nav-link:hover span::after {
   width: 100%;
 }
@@ -75,9 +83,9 @@ a:hover {
 }
 
 .dropdown-item:hover {
-  background: rgba(30, 40, 80,1);
+  background: rgba(30, 40, 80, 1);
   color: #00d4ff;
-  
+
 }
 
 section.hero {
@@ -91,4 +99,12 @@ main {
 .big-radio {
   transform: scale(1.5);
   margin-right: 5px;
+}
+
+
+.ulclass {
+  border-left: 4px solid #3498db;
+  padding-left: 15px;
+  list-style: none;
+
 }
