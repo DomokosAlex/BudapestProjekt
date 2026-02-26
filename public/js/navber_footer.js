@@ -3,28 +3,28 @@ const nav = document.getElementById("Nav");
 nav.innerHTML = `
    <nav class="navbar navbar-expand-lg navbar-dark" id="navbg">
     <div class="container-fluid">
-        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <button class="navbar-toggler" aria-label="Menü megnyitása" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav w-100 d-flex justify-content-evenly">
-                <li class="nav-item"><a class="nav-link" href="./dokumentacio.html"><span>Dokumentáció</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="./tarsak.html"><span>Társelemek</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="./index.html"><span>Főoldal</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./dokumentacio"><span>Dokumentáció</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./tarsak"><span>Társelemek</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./"><span>Főoldal</span></a></li>
                 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>Tesztek</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="./kerdoiv.html">Kérdőív</a></li>
-                        <li><a class="dropdown-item" href="./ajanlas.html">Glicin Teszt</a></li>
+                        <li><a class="dropdown-item" href="./kerdoiv">Kérdőív</a></li>
+                        <li><a class="dropdown-item" href="./ajanlas">Glicin Teszt</a></li>
                     </ul>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="./statisztikak.html"><span>Statisztika</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="./tudomanyhatter.html"><span>Források</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./statisztikak"><span>Statisztika</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./tudomanyhatter"><span>Források</span></a></li>
             </ul>
         </div>
     </div>

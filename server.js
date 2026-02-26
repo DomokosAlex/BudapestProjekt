@@ -103,10 +103,31 @@ app.get('/ajanlas/:kod', (req, res) => {
     });
 });
 
+//fooldal
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+//aloldalak
+app.get('/kerdoiv', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'kerdoiv.html'));
+});
+
+app.get('/dokumentacio', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'dokumentacio.html'));
+});
+app.get('/statisztikak', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'statisztikak.html'));
+});
+app.get('/tarsak', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'tarsak.html'));
+});
+app.get('/ajanlas', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'ajanlas.html'));
+});
+app.get('/tudomanyhatter', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'tudomanyhatter.html'));
+});
 
 app.get('/api/statisztika', (req, res) => {
     pool.query('SELECT * FROM kerdoiv', (err, results) => {
