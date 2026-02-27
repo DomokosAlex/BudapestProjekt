@@ -14,6 +14,7 @@ function eredmenysz(valasztasok, bmi) {
     let user_ossz = 0;
 
     valasztasok.forEach(v => {
+        if (v.id === 8) return;
         const kerdes = eredetiAdatok.find(q => q.id === v.id);
         if (kerdes && v.valasztott !== null && v.valasztott !== undefined && kerdes.valaszok[v.valasztott]) {
             user_ossz += kerdes.valaszok[v.valasztott].ert * kerdes.weight;

@@ -67,9 +67,7 @@ function Valasz_lehetosegek(adat) {
 
 function ugras(ugras) {
     index = ugras;
-    Betoltes(index)
-    Gombok();
-
+    Betoltes(index) 
 }
 
 function Gombok() {
@@ -165,6 +163,3 @@ function sendResultsToBackend() {
         .then(data => console.log('Backend response:', data))
         .catch(err => console.error('Error sending results:', err));
 }
-
-/// A /kerdoiv oldalal kell foglalkozni a serveren. oda fog menni az adat az ID - Valaszok{1,2,6,4}
-///  ezeket kellesz majd validátlni

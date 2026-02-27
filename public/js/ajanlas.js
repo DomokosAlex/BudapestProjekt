@@ -1,38 +1,145 @@
 let kerdesek_tomb = [];
-let currentIndex = -1;
+let currentIndex = 0;
 let userMeta = { nem: "", testsuly: null, magassag: null };
 
 
 window.addEventListener('load', () => {
-    Elso_Oldal();
+    Betolt(currentIndex);
 });
+
+
+async function Betolt(index) {
+    if (kerdesek_tomb.length === 0) {
+        const response = await fetch('/api/ajanlas_kerd');
+        kerdesek_tomb = await response.json();
+    }
+
+    if (index == 0) {
+        Elso_Oldal();
+    }
+    else {
+        renderAll();
+        navigacios_gomb();
+    }
+
+
+}
+
+function Elso_Oldal() {
+    const root = document.getElementById("Kerdesek");
+    root.innerHTML = `
+     <h1 id="cim" class=" mt-4 text-center p3">Glicinteszt – Vizsgáld meg a glicinmennyiséged!</h1>
+            <hr>
+
+            <div class="row mb-5">
+                <div class=" pt-5 col-lg-6 col-md-6">
+                    <div class="col-md-9">
+                        <div class="mb-4">
+                            <label class="form-label h4">Nem</label>
+                            <select id="nem" class="form-select">
+                                <option value="">(válassz)</option>
+                                <option value="férfi">Férfi</option>
+                                <option value="nő">Nő</option>
+                                <option value="egyéb">Egyéb</option>
+                            </select>
+                        </div>
+                        <div class="mb-4 ">
+                            <label class="form-label  h4">Testsúly (kg)</label>
+                            <input id="testsuly" type="number" name="testsuly" min="20" max="400" class="form-control"
+                                placeholder="65" pattern="[0-9]{3}">
+                        </div>
+                        <div class="mb-4  ">
+                            <label class="form-label h4">Magasság (cm)</label>
+                            <input id="magassag" type="number" name="magassag" min="20" max="260" class="form-control"
+                                placeholder="165" pattern="[0-9]{3}">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="mt-4 bg-light col-md-6 col-lg-6 rounded-4">
+                    <div class="  text-dark  ">
+                        <h1 class="modal-title fs-5 text-center m-3">Tájékoztatás az L-glicin
+                            kalkulátorról
+                        </h1>
+
+
+                        <div class="modal-body text-justify">
+                            <p>
+                                Mivel az L-Glicin szintjének laboratóriumi körülményeken kívüli meghatározására
+                                jelenleg
+                                nem létezik
+                                egységes iparági szabvány, ezért egy<b> saját fejlesztésű módszertant
+                                    alkalmazunk.</b>
+                            </p>
+                            <p>
+                                A számítás alapja egy elméleti modell: a bevitt tápanyagok és a szervezet
+                                valószínűsíthető felhasználása
+                                alapján<b> becsüljük meg a várható értékeket.</b>Ez a módszer nem mérés, hanem egy
+                                körülhatárolt becslés,
+                                amely segít eligazodni az életmódváltásban.
+                            </p>
+                            <hr>
+                            <p><b>Fontos figyelmeztetés:</b> Fontos: Ez a teszt egy belső fejlesztésű (in-house),
+                                nem
+                                diagnosztikai
+                                eljárás.<b> Az eredmény tájékoztató jellegű,</b> és nem helyettesíti a pontos
+                                laboratóriumi vérvizsgálatot
+                                vagy
+                                az orvosi konzultációt. Kérjük, az eredményeket ennek tudatában kezelje!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div id="helyzet" class="mt-2 text-center"></div>
+
+                <div class="text-end p-3">
+                    <button class="btn btn-secondary btn-lg" onclick="Elozo()">Előző</button>
+                    <button class="btn btn-success btn-lg" id="kov" onclick="Kovetkezo()">Következő</button>
+                </div>`;
+
+    const nemEl = document.getElementById("nem");
+    const tsEl = document.getElementById("testsuly");
+    const mgEl = document.getElementById("magassag");
+
+    if (userMeta.nem) nemEl.value = userMeta.nem;
+    if (userMeta.testsuly !== null && userMeta.testsuly >= 20 && userMeta.testsuly < 400) tsEl.value = userMeta.testsuly;
+    if (userMeta.magassag !== null && userMeta.magassag >= 20 && userMeta.magassag < 260) mgEl.value = userMeta.magassag;
+    // event listenerek, hogy frissítsék a userMeta-t
+    nemEl.addEventListener("change", e => { userMeta.nem = e.target.value; });
+    tsEl.addEventListener("input", e => { userMeta.testsuly = e.target.value ? Number(e.target.value) : null; });
+    mgEl.addEventListener("input", e => { userMeta.magassag = e.target.value ? Number(e.target.value) : null; });
+
+    navigacios_gomb();
+}
+
+
+
+
 
 function kerdes_felteves(i) {
     const area = document.getElementById("questionArea");
-    // védelem hibás indexek ellen
-    if (i === -1 || i === null || i === undefined) {
-        if (area) area.innerHTML = "";
-        return;
-    }
-    if (i < 0 || i >= kerdesek_tomb.length) {
-        if (area) area.innerHTML = `<p>Hiba: érvénytelen kérdésszám.</p>`;
+
+    if (i < 0 || i - 1 >= kerdesek_tomb.length) {
+        area.innerHTML = `<p>Hiba: érvénytelen kérdésszám.</p>`;
         return;
     }
 
-    const q = kerdesek_tomb[i];
+
+
+    const q = kerdesek_tomb[i - 1];
     const selected = q.valasztott;
     document.getElementById("cim").innerHTML = `${q.szoveg}`;
 
-    let html = ``;
 
     q.valaszok.forEach((v, idx) => {
         const checked = (selected === idx) ? "checked" : "";
-        html += `<label class="d-block h4">
+        area.innerHTML += `<label class="d-block h4">
         <input type="radio" name="valasz" value="${idx}" class="big-radio" ${checked}> ${v}
         </label>`;
     });
 
-    if (area) area.innerHTML = html;
+   
 
     document.querySelectorAll('input[name="valasz"]').forEach(r => {
         r.addEventListener('change', (ev) => {
@@ -43,74 +150,10 @@ function kerdes_felteves(i) {
     });
 }
 
-async function Elso_Oldal() {
-
-    if (kerdesek_tomb.length === 0) {
-        const response = await fetch('/api/ajanlas_kerd');
-        kerdesek_tomb = await response.json();
-    }
-
-    const root = document.getElementById("Kerdesek");
-    root.innerHTML = `
-     <h1 id="cim" class=" mt-4 text-center p3">Glicinteszt – Vizsgáld meg a glicinmennyiséged!</h1>
-    <hr>
-        <div class="row pt-5">
-            <div class="col-md-4">
-                <div class="mb-4">
-                    <label class="form-label h4">Nem</label>
-                    <select id="nem" class="form-select" >
-                        <option value="">(válassz)</option>
-                        <option value="férfi">Férfi</option>
-                        <option value="nő">Nő</option>
-                        <option value="egyéb">Egyéb</option>
-                    </select>
-                </div>
-                <div class="mb-4 ">
-                    <label class="form-label  h4">Testsúly (kg)</label>
-                    <input id="testsuly" type="number" name="testsuly" min="20" max="400" class="form-control" placeholder="65" pattern="[0-9]{3}}" >
-                </div>
-                <div class="mb-4  h4">
-                    <label class="form-label">Magasság (cm)</label>
-                    <input id="magassag" type="number" name="magassag" min="20" max="260" class="form-control" placeholder="165" pattern="[0-9]{3}" >
-                </div>
-            </div>
-            <div class="col-md-8"></div>
-        </div>
-
-            <div id="helyzet" class="mt-2 text-center"></div>
-
-        <div class="text-end p-3">
-            <button class="btn btn-secondary btn-lg" onclick="Elozo()">Előző</button>
-            <button class="btn btn-success btn-lg" id="kov" onclick="Kovetkezo()">Következő</button>
-        </div>`;
-
-    const nemEl = document.getElementById("nem");
-    const tsEl = document.getElementById("testsuly");
-    const mgEl = document.getElementById("magassag");
-
-    if (userMeta.nem) nemEl.value = userMeta.nem;
-    if (userMeta.testsuly !== null && userMeta.testsuly >= 20 || userMeta.testsuly < 300) tsEl.value = userMeta.testsuly;
-    if (userMeta.magassag !== null && userMeta.testsuly >= 50 || userMeta.testsuly < 240) mgEl.value = userMeta.magassag;
-
-
-    // event listenerek, hogy frissítsék a userMeta-t
-    nemEl.addEventListener("change", e => {
-        userMeta.nem = e.target.value;
-    });
-    tsEl.addEventListener("input", e => {
-        userMeta.testsuly = e.target.value ? Number(e.target.value) : null;
-    });
-    mgEl.addEventListener("input", e => {
-        userMeta.magassag = e.target.value ? Number(e.target.value) : null;
-    });
-    navigacios_gomb();
-
-
-}
 
 function renderAll() {
     const root = document.getElementById("Kerdesek");
-    const szoveg = (currentIndex === kerdesek_tomb.length - 1) ? "Befejezés" : "Következő";
+    const szoveg = (currentIndex === kerdesek_tomb.length ) ? "Befejezés" : "Következő";
 
     root.innerHTML = `
      <h1 id="cim" class=" mt-4 text-center p3"></h1>
@@ -121,30 +164,29 @@ function renderAll() {
         <button class="btn btn-secondary btn-lg" onclick="Elozo()">Előző</button>
         <button class="btn btn-success btn-lg" id="kov" onclick="Kovetkezo()">${szoveg}</button>
     </div>`;
-    navigacios_gomb();
+    kerdes_felteves(currentIndex);
+
 }
 
 function navigacios_gomb() {
     const helyzet = document.getElementById("helyzet");
-    if (!helyzet) return;
 
-    // építsük fel egyszerre
 
-    const kimutatas = (currentIndex == -1) ? "btn-success" : "btn-secondary";
-    helyzet.innerHTML = `<button class="btn m-1 p-3 col-1 ${kimutatas}" onclick="ugras(-1)">0</button>`;
+    const kimutatas = (currentIndex == 0) ? "btn-success" : (userMeta.nem.length>0 && userMeta.magassag>0 && userMeta.testsuly>0) ? "btn-secondary" : "btn-warning";
+    helyzet.innerHTML = `<button class="btn m-1 p-2 col-1 ${kimutatas}" onclick="ugras(0)">1</button>`;
+
     kerdesek_tomb.forEach(k => {
-        const idx = k.id - 1;
-        const cls = (idx === currentIndex) ? "btn-success" : (k.megcsinalta) ? "btn-secondary" : "btn-warning";
-        helyzet.innerHTML += `<button class="btn m-1 p-3 col-1 ${cls}" onclick="ugras(${idx})">${k.id}</button>`;
+        const idx = k.id;
+        console.log(currentIndex)
+        const cls = (idx == currentIndex) ? "btn-success" : (k.megcsinalta) ? "btn-secondary" : "btn-warning";
+        helyzet.innerHTML += `<button class="btn m-1 p-2 col-1 ${cls}" onclick="ugras(${idx})">${idx + 1}</button>`;
     });
 }
 
 function Kovetkezo() {
-    if (currentIndex === -1) {
-        currentIndex = 0;
-        renderAll();
-        kerdes_felteves(currentIndex);
-        navigacios_gomb();
+    if(currentIndex===0 && userMeta.nem.length>0 && userMeta.magassag>0 && userMeta.testsuly>0){
+        currentIndex++;
+        Betolt(currentIndex);
         return;
     }
 
@@ -170,32 +212,14 @@ function Kovetkezo() {
 }
 
 function Elozo() {
-    if (currentIndex === -1) {
-        alert("Nem lehet visszább menni");
-        return;
-    }
-    if (currentIndex === 0) {
-        Elso_Oldal();
-        currentIndex = -1;
-        return;
-    }
+    if (currentIndex === 0) return alert("Ettől visszább nem lehet menni!");
     currentIndex--;
-    kerdes_felteves(currentIndex);
-    navigacios_gomb();
+    Betolt(currentIndex);
 }
 
-function ugras(szam) {
-
-    if (szam == -1) {
-        currentIndex = -1;
-        Elso_Oldal();
-
-        return;
-    }
-    currentIndex = szam;
-    renderAll();
-    kerdes_felteves(currentIndex);
-    navigacios_gomb();
+function ugras(ugras) {
+    currentIndex = ugras;
+    Betolt(currentIndex)
 }
 
 function sendResultsToBackend() {

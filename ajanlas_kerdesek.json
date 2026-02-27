@@ -1,23 +1,31 @@
 [
     {
         "id": 1,
-        "szoveg": "Mennyi idős vagy?",
+        "szoveg": "Milyen korosztályba tartozik ?",
         "valaszok": [
             {
-                "ker": "20 év alatt",
-                "ert": 3
+                "ker": "18 év alatti",
+                "ert": 4
             },
             {
-                "ker": "20–35 év között",
-                "ert": 1
+                "ker": "18-25 év",
+                "ert": 2
             },
             {
-                "ker": "35–50 év között",
+                "ker": "26-35 év",
+                "ert": 0
+            },
+            {
+                "ker": "36-45 év",
                 "ert": -2
             },
             {
-                "ker": "50 év felett",
-                "ert": -4
+                "ker": "46-60 év",
+                "ert": -3
+            },
+            {
+                "ker": "61 év és feljebb",
+                "ert": -5
             }
         ],
         "weight": 1.5,
@@ -43,6 +51,18 @@
             {
                 "ker": "Nem eszem húst / Vegán vagyok",
                 "ert": -1
+            },
+            {
+                "ker": "Vegetáriánus vagyok (tojás/tejtermék van)",
+                "ert": -1
+            },
+            {
+                "ker": "Teljes értékű, egészségtudatos vegán étrend",
+                "ert": -2
+            },
+            {
+                "ker": "Vegán, főleg feldolgozott növényi ételekkel",
+                "ert": -4
             }
         ],
         "weight": 1.8,
@@ -118,19 +138,27 @@
     },
     {
         "id": 6,
-        "szoveg": "Tapasztalsz ízületi kattogást vagy fájdalmat?",
+        "szoveg": "Érzel-e ízületi merevséget, fájdalmat vagy hallasz ropogó hangot?",
         "valaszok": [
             {
-                "ker": "Gyakran / Krónikus fájdalom",
+                "ker": "Krónikus fájdalom, gyulladás vagy rendszeres merevség",
+                "ert": -4
+            },
+            {
+                "ker": "Gyakori kattogás és terhelésre fájdalom",
                 "ert": -3
             },
             {
-                "ker": "Néha, terhelésre",
+                "ker": "Néha enyhe kattogás, de fájdalom nélkül",
                 "ert": -1
             },
             {
-                "ker": "Nem, minden rendben",
+                "ker": "Ritkán, csak extrém terhelésnél",
                 "ert": 2
+            },
+            {
+                "ker": "Nem, egészséges ízüleim vannak",
+                "ert": 5
             }
         ],
         "weight": 1.2,
@@ -142,15 +170,27 @@
         "szoveg": "Szedsz-e jelenleg glicint vagy kollagént?",
         "valaszok": [
             {
-                "ker": "Nem szedek",
+                "ker": "Soha nem szedtem és nem szedek jelenleg sem",
                 "ert": 0
             },
             {
-                "ker": "Igen, kis mennyiséget / rendszertelenül",
+                "ker": "Glicin, kis dózis (~1–3 g/nap)",
+                "ert": 2
+            },
+            {
+                "ker": "Glicin, nagy dózis (≥5 g/nap)",
+                "ert": 5
+            },
+            {
+                "ker": "Kollagén táplálékkiegészítő, alacsony dózis (≤5 g/nap)",
                 "ert": 1
             },
             {
-                "ker": "Igen, nagy dózist (5g+ glicin vagy 10g+ kollagén)",
+                "ker": "Kollagén, nagy dózis (≥10 g/nap)",
+                "ert": 3
+            },
+            {
+                "ker": "Mindkettőt szedem (glicin + kollagén rendszeresen)",
                 "ert": 5
             }
         ],
@@ -161,18 +201,24 @@
     {
         "id": 8,
         "szoveg": "Ha szedtél már glicint, tapasztaltál rosszullétet (szorongás, pörgés, hányinger)?",
+        "feltetelek": {
+            "kerdes_id": 7,
+            "kizart_indexek": [
+                0
+            ]
+        },
         "valaszok": [
             {
-                "ker": "Még nem szedtem / Nem tapasztaltam",
-                "ert": 0
+                "ker": "Nem tapasztaltam semmilyen rosszullétet",
+                "ert": 1
             },
             {
-                "ker": "Igen, rosszul voltam tőle",
+                "ker": "Erősebb reakció (hányinger, hányás, erős szédülés)",
                 "ert": -20
             },
             {
-                "ker": "Csak enyhe puffadást",
-                "ert": 0
+                "ker": "Enyhe emésztési tünetek (puffadás, gyomor)",
+                "ert": -1
             }
         ],
         "weight": 3.0,
