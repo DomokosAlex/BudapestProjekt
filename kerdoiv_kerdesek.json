@@ -56,8 +56,12 @@
                 "valasz": "Szomszédos ország"               
             },
             {
-                "valasz": "Egyéb"          
+                "valasz": "Eu-i"          
+            },
+             {
+                "valasz": "Tengeren túli"          
             }
+
         ], 
         "megcsinalta": false,
         "valasztott": null
@@ -93,7 +97,7 @@
                 "valasz": "Nem szeretném megadni"          
             },
             {
-                "valasz": "Egyéb"          
+                "valasz": "Nem bináris"          
             }
         ], 
         "megcsinalta": false,

@@ -25,9 +25,7 @@ async function Betoltes(i) {
         <form id="Form" class="p-3 g-3"></form>
     `;
 
-
-
-    const szoveg = (i === kerdesek_tomb.length - 1) ? "Befejezés" : "Következő";
+    const szoveg = (kerdesek_tomb.filter(n=> n.megcsinalta== true).length>= kerdesek_tomb.length-1 ) ? "Befejezés" : "Következő";
 
     oldal.innerHTML += `
     <div class="text-center mt-2" id="helyzet"></div>
@@ -76,7 +74,7 @@ function Gombok() {
     helyzet.innerHTML = "";
     kerdesek_tomb.forEach(k => {
         const cls = (k.id - 1 === index) ? "btn-success" : (k.megcsinalta ? "btn-secondary" : "btn-warning");
-        helyzet.innerHTML += `<button class="btn m-1 p-2 col-1 ${cls}" onclick="ugras(${k.id - 1})">${k.id}</button>`;
+        helyzet.innerHTML += `<button class="btn m-1 szam_gomb col-1 ${cls}" onclick="ugras(${k.id - 1})">${k.id}</button>`;
     });
 }
 
@@ -93,7 +91,7 @@ function Kovetkezo() {
     adat.valasztott = valIndex;
 
 
-    if (index == kerdesek_tomb.length - 1 && kerdesek_tomb.every(n => n.megcsinalta)) {
+    if (kerdesek_tomb.every(n => n.megcsinalta)) {
 
         Befejezes();
     }

@@ -24,7 +24,7 @@
                 "ert": -3
             },
             {
-                "ker": "61 év és feljebb",
+                "ker": "61 év és afelett",
                 "ert": -5
             }
         ],
@@ -49,7 +49,7 @@
                 "ert": 5
             },
             {
-                "ker": "Nem eszem húst / Vegán vagyok",
+                "ker": "Nem eszem húst",
                 "ert": -1
             },
             {
@@ -71,7 +71,7 @@
     },
     {
         "id": 3,
-        "szoveg": "Mennyi feldolgozott élelmiszert eszel (konzerv, bolti felvágott, készétel)?",
+        "szoveg": "Mennyi feldolgozott élelmiszert fogyasztasz (konzerv, bolti felvágott, készétel)?",
         "valaszok": [
             {
                 "ker": "Rendszeresen, napi szinten",
@@ -99,16 +99,20 @@
         "szoveg": "Hogyan gyógyulnak a sebeid, milyen a bőröd állapota?",
         "valaszok": [
             {
-                "ker": "Lassan gyógyul, hegesedik / Striák / Korai ráncok",
-                "ert": -4
+                "ker": "Lassan gyógyul, száraz bőr",
+                "ert": -3
             },
             {
-                "ker": "Átlagos, normális",
+                "ker": "Átlagosan gyógyul, normális a bőröm",
                 "ert": 0
             },
             {
                 "ker": "Gyorsan gyógyul, rugalmas a bőröm",
                 "ert": 3
+            },
+            {
+                "ker": "Kifejezetten gyors a regeneráció, szép és egészséges a bőröm",
+                "ert": 5
             }
         ],
         "weight": 1.4,
@@ -120,16 +124,24 @@
         "szoveg": "Milyen az alvásminőséged és a stressz-szinted?",
         "valaszok": [
             {
-                "ker": "Nehezen alszom el / Éjjel felébredek",
+                "ker": "Rossz alvás, gyakori ébredés, nem vagyok kipihent",
                 "ert": -5
             },
             {
-                "ker": "Fáradtan ébredek, de végigalszom az éjjelt",
-                "ert": -2
+                "ker": "Nehezen alszom el, vagy felszínes az alvásom",
+                "ert": -3
             },
             {
-                "ker": "Jól alszom, kipihent vagyok",
+                "ker": "Végigalszom az éjszakát, de nem mindig vagyok kipihent",
+                "ert": -1
+            },
+            {
+                "ker": "Jól alszom, általában kipihent vagyok",
                 "ert": 3
+            },
+            {
+                "ker": "Mély, pihentető alvás, alacsony stressz",
+                "ert": 5
             }
         ],
         "weight": 1.4,
@@ -145,7 +157,7 @@
                 "ert": -4
             },
             {
-                "ker": "Gyakori kattogás és terhelésre fájdalom",
+                "ker":"Gyakori kattogás és terhelésre jelentkező fájdalom",
                 "ert": -3
             },
             {
@@ -170,11 +182,11 @@
         "szoveg": "Szedsz-e jelenleg glicint vagy kollagént?",
         "valaszok": [
             {
-                "ker": "Soha nem szedtem és nem szedek jelenleg sem",
+                "ker": "Soha nem szedtem, és jelenleg sem szedek",
                 "ert": 0
             },
             {
-                "ker": "Glicin, kis dózis (~1–3 g/nap)",
+                "ker": "Glicin, kis dózis (~1-3 g/nap)",
                 "ert": 2
             },
             {
@@ -182,7 +194,7 @@
                 "ert": 5
             },
             {
-                "ker": "Kollagén táplálékkiegészítő, alacsony dózis (≤5 g/nap)",
+                "ker": "Kollagén-táplálékkiegészítő, alacsony dózis (≤5 g/nap)",
                 "ert": 1
             },
             {
@@ -195,33 +207,6 @@
             }
         ],
         "weight": 1.0,
-        "megcsinalta": false,
-        "valasztott": null
-    },
-    {
-        "id": 8,
-        "szoveg": "Ha szedtél már glicint, tapasztaltál rosszullétet (szorongás, pörgés, hányinger)?",
-        "feltetelek": {
-            "kerdes_id": 7,
-            "kizart_indexek": [
-                0
-            ]
-        },
-        "valaszok": [
-            {
-                "ker": "Nem tapasztaltam semmilyen rosszullétet",
-                "ert": 1
-            },
-            {
-                "ker": "Erősebb reakció (hányinger, hányás, erős szédülés)",
-                "ert": -20
-            },
-            {
-                "ker": "Enyhe emésztési tünetek (puffadás, gyomor)",
-                "ert": -1
-            }
-        ],
-        "weight": 3.0,
         "megcsinalta": false,
         "valasztott": null
     }

@@ -153,16 +153,19 @@ function kerdes_felteves(i) {
 
 function renderAll() {
     const root = document.getElementById("Kerdesek");
-    const szoveg = (currentIndex === kerdesek_tomb.length ) ? "Befejezés" : "Következő";
-
+    if(kerdesek_tomb.filter(n=> n.megcsinalta== true).length>= kerdesek_tomb.length-1 ){
+        szoveg="Befejezés";
+        irany="befejezes()";
+    }
+    else{szoveg="Következő";irany="Kovetkezo()"}
     root.innerHTML = `
-     <h1 id="cim" class=" mt-4 text-center p3"></h1>
+     <h1 id="cim" class=" mt-4 text-center p3 fs-2"></h1>
     <hr>
         <form id="questionArea" class="p-3 g-3"></form>
     <div id="helyzet" class="mt-2 text-center"></div>
     <div class="text-end p-3">
         <button class="btn btn-secondary btn-lg" onclick="Elozo()">Előző</button>
-        <button class="btn btn-success btn-lg" id="kov" onclick="Kovetkezo()">${szoveg}</button>
+        <button class="btn btn-success btn-lg" id="kov" onclick="${irany}">${szoveg}</button>
     </div>`;
     kerdes_felteves(currentIndex);
 
@@ -173,13 +176,13 @@ function navigacios_gomb() {
 
 
     const kimutatas = (currentIndex == 0) ? "btn-success" : (userMeta.nem.length>0 && userMeta.magassag>0 && userMeta.testsuly>0) ? "btn-secondary" : "btn-warning";
-    helyzet.innerHTML = `<button class="btn m-1 p-2 col-1 ${kimutatas}" onclick="ugras(0)">1</button>`;
+    helyzet.innerHTML = `<button class="btn m-1  col-1 szam_gomb ${kimutatas}" onclick="ugras(0)">1</button>`;
 
     kerdesek_tomb.forEach(k => {
         const idx = k.id;
         console.log(currentIndex)
         const cls = (idx == currentIndex) ? "btn-success" : (k.megcsinalta) ? "btn-secondary" : "btn-warning";
-        helyzet.innerHTML += `<button class="btn m-1 p-2 col-1 ${cls}" onclick="ugras(${idx})">${idx + 1}</button>`;
+        helyzet.innerHTML += `<button class="btn m-1  col-1 szam_gomb ${cls}" onclick="ugras(${idx})">${idx + 1}</button>`;
     });
 }
 
@@ -191,24 +194,22 @@ function Kovetkezo() {
     }
 
     const selected = document.querySelector('input[name="valasz"]:checked');
-    if (!selected) { return alert("Válassz egy választ, vagy használd a kérdésszám gombokat."); }
+    if (!selected) { return alert("Kérlek tölts ki a mezőt"); }
 
-    kerdesek_tomb[currentIndex].valasztott = parseInt(selected.value);
-    kerdesek_tomb[currentIndex].megcsinalta = true;
-
-    if (currentIndex === kerdesek_tomb.length - 1) {
-        if (kerdesek_tomb.every(q => q.megcsinalta || q.valasztott !== null)) {
+    kerdesek_tomb[currentIndex-1].valasztott = parseInt(selected.value);
+    kerdesek_tomb[currentIndex-1].megcsinalta = true;
+currentIndex++;
+    Betolt(currentIndex);
+}
+function befejezes(){
+     if (kerdesek_tomb.every(q => q.megcsinalta || q.valasztott !== null) && userMeta.nem.length>0 && userMeta.magassag>20 && userMeta.testsuly>20) {
             alert("Lejebb görgetve megtekintheti az eredményét")
             sendResultsToBackend();
             return;
         } else {
             alert("Töltsd ki az összes kérdést a befejezéshez.");
-            return;
+           
         }
-    }
-    currentIndex++;
-    kerdes_felteves(currentIndex);
-    navigacios_gomb();
 }
 
 function Elozo() {
@@ -235,8 +236,9 @@ function sendResultsToBackend() {
             id: q.id,
             valasztott: q.valasztott
         }))
+       
     };
-
+ console.log(bekuldeniValo)
     fetch('/api/kiertekeles', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
