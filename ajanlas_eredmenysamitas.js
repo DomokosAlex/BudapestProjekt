@@ -14,6 +14,7 @@ function eredmenysz(valasztasok, bmi) {
     let user_ossz = 0;
 
     valasztasok.forEach(v => {
+        
         const kerdes = eredetiAdatok.find(q => q.id === v.id);
         if (kerdes && v.valasztott !== null && v.valasztott !== undefined && kerdes.valaszok[v.valasztott]) {
             user_ossz += kerdes.valaszok[v.valasztott].ert * kerdes.weight;
@@ -72,20 +73,18 @@ async function Befejezes(meta, valasztasok, connection) {
     let tanacs = [];
 
     // JAVÍTÁS: A 8-as kérdés válaszát a felhasználó válaszaiból keressük ki!
-    let veszely = false;
+    
 
-    if (valasztasok.some(v => v.id === 8 && v.valasztott === 1)) {
-        veszely = true;
-    }
-    if (veszely) {
+    
+   
+        /*
         jelzo_szin = "alert-danger";
         status = "NEM JAVASOLT A PÓTLÁS (Egyéni Érzékenység)";
         leiras = "A szervezetedben a glutamát-GABA egyensúly eltolódott (NMDA receptor túlérzékenység). A glicin izgató hatású lehet nálad.";
         tanacs.push("Az általad tapasztalt rosszullét (szorongás/pörgés) miatt a tiszta glicin szedése TILOS.");
         tanacs.push("Fókuszálj a Magnézium és B6-vitamin bevitelre.");
-        tanacs.push("Kizárólag természetes forrásból (hosszú főzésű húsleves) próbáld bevinni, óvatosan.");
-    }
-    else {
+        tanacs.push("Kizárólag természetes forrásból (hosszú főzésű húsleves) próbáld bevinni, óvatosan.");*/
+  
         if (user_ossz <= -40) {
             jelzo_szin = "alert-danger";
             status = "Kritikus Glicin-hiány";
@@ -128,7 +127,7 @@ async function Befejezes(meta, valasztasok, connection) {
         if (meta.nem === "nő") {
             tanacs.push("Nők esetén fontos a bőr és csontok kollagénellátása; figyeld a havi ciklus és energiaszint változásait.");
         }
-    }
+    
 
     const eredmeny_kod = await genCode(connection);
 

@@ -25,9 +25,7 @@ async function Betoltes(i) {
         <form id="Form" class="p-3 g-3"></form>
     `;
 
-
-
-    const szoveg = (i === kerdesek_tomb.length - 1) ? "Befejezés" : "Következő";
+    const szoveg = (kerdesek_tomb.filter(n=> n.megcsinalta== true).length>= kerdesek_tomb.length-1 ) ? "Befejezés" : "Következő";
 
     oldal.innerHTML += `
     <div class="text-center mt-2" id="helyzet"></div>
@@ -67,9 +65,7 @@ function Valasz_lehetosegek(adat) {
 
 function ugras(ugras) {
     index = ugras;
-    Betoltes(index)
-    Gombok();
-
+    Betoltes(index) 
 }
 
 function Gombok() {
@@ -78,7 +74,7 @@ function Gombok() {
     helyzet.innerHTML = "";
     kerdesek_tomb.forEach(k => {
         const cls = (k.id - 1 === index) ? "btn-success" : (k.megcsinalta ? "btn-secondary" : "btn-warning");
-        helyzet.innerHTML += `<button class="btn m-1 p-2 col-1 ${cls}" onclick="ugras(${k.id - 1})">${k.id}</button>`;
+        helyzet.innerHTML += `<button class="btn m-1 szam_gomb col-1 ${cls}" onclick="ugras(${k.id - 1})">${k.id}</button>`;
     });
 }
 
@@ -95,7 +91,7 @@ function Kovetkezo() {
     adat.valasztott = valIndex;
 
 
-    if (index == kerdesek_tomb.length - 1 && kerdesek_tomb.every(n => n.megcsinalta)) {
+    if (kerdesek_tomb.every(n => n.megcsinalta)) {
 
         Befejezes();
     }
@@ -165,6 +161,3 @@ function sendResultsToBackend() {
         .then(data => console.log('Backend response:', data))
         .catch(err => console.error('Error sending results:', err));
 }
-
-/// A /kerdoiv oldalal kell foglalkozni a serveren. oda fog menni az adat az ID - Valaszok{1,2,6,4}
-///  ezeket kellesz majd validátlni
