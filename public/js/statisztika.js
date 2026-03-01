@@ -139,7 +139,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const map = {
             hallott: "A glicin ismertsége",
-            haigenhonnan: "A glicinről szerzett információ forrása",
+            haigenhonnan: "Az oldalról szerzett információ forrása",
             nemzetiseg: "A kitöltők nemzetiségi megolszlása",
             orszag: "A kitöltők ország szerinti megolszlása",
             nem: "A kitöltők nem szerinti megolszlása",

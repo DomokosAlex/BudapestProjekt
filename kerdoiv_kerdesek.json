@@ -1,47 +1,41 @@
 [
     {
         "id": 1,
-        "kerdes": "Hallott-e már a glicin aminósavról?",
+        "kerdes": "Milyen szinten ismerte a glicin aminosavat, mielőtt az oldalunkra látogatott?",
         "valaszlehetosegek": [
             {
-                "valasz": "Igen, és tudom, mire való"               
+                "valasz": "Már korábban is mélyreható ismeretekkel rendelkeztem"
             },
             {
-                "valasz": "Igen, de nem tudom pontosan"               
+                "valasz": "Hallottam már róla, de az oldalunk összefoglalói segítettek pontosan megérteni"
             },
             {
-                "valasz": "Nem, még soha nem hallottam"          
+                "valasz": "Itt, az oldalunkon hallottam róla először"
             },
             {
-                "valasz": "Először az oldalunkon olvastam róla"              
+                "valasz": "Most ismerkedem a témával"
             }
-        ], 
+        ],
         "megcsinalta": false,
         "valasztott": null
     },
     {
         "id": 2,
-        "kerdes": "Ha hallott róla, honnan szerezte az információt?",
+        "kerdes": "Honnan értesült az oldalunkról?",
         "valaszlehetosegek": [
             {
-                "valasz": "Orvostól, dietetikustól"               
+                "valasz": "Kifejezetten a glicinnel kapcsolatos hiteles információkat kerestem"
             },
             {
-                "valasz": "Egészségügyi / tudományos oldalról"               
+                "valasz": "Közösségi média (Facebook, Instagram, stb.)"
             },
             {
-                "valasz": "Baráttól, ismerőstől"          
+                "valasz": "Szakértői ajánlás"
             },
             {
-                "valasz": "Közösségi médiából / fórumokról"              
-            },
-            {
-                "valasz": "Oldalunkról"          
-            },
-            {
-                "valasz": "Nem hallottam"              
+                "valasz": "Ismerős ajánlása"
             }
-        ], 
+        ],
         "megcsinalta": false,
         "valasztott": null
     },
@@ -50,32 +44,50 @@
         "kerdes": "Milyen nemzetiségű?",
         "valaszlehetosegek": [
             {
-                "valasz": "Magyar"               
+                "valasz": "Magyar."
             },
             {
-                "valasz": "Szomszédos ország"               
+                "valasz": "Szomszédos országbeli (szlovák, román stb.)."
             },
             {
-                "valasz": "Egyéb"          
+                "valasz": "Egyéb európai (francia, német stb.)."
+            },
+            {
+                "valasz": "Amerikai (észak- vagy dél-amerikai)."
+            },
+            {
+                "valasz": "Afrikai."
+            },
+            {
+                "valasz": "Egyéb (ázsiai, ausztrál stb.)."
             }
-        ], 
+        ],
         "megcsinalta": false,
         "valasztott": null
     },
     {
-        "id":4,
+        "id": 4,
         "kerdes": "Hol él jelenleg?",
         "valaszlehetosegek": [
             {
-                "valasz": "Magyarország"               
+                "valasz": "Magyarországon."
             },
             {
-                "valasz": "Szomszédos ország"               
+                "valasz": "Szomszédos országban (Kárpát-medence)."
             },
             {
-                "valasz": "Más, távolabbi ország"          
+                "valasz": "Egyéb európai országban."
+            },
+            {
+                "valasz": "Amerikában (Észak- vagy Dél-Amerika)."
+            },
+            {
+                "valasz": "Afrikában."
+            },
+            {
+                "valasz": "Egyéb helyen (Ázsia, Ausztrália stb.)."
             }
-        ], 
+        ],
         "megcsinalta": false,
         "valasztott": null
     },
@@ -84,18 +96,18 @@
         "kerdes": "Mi a neme?",
         "valaszlehetosegek": [
             {
-                "valasz": "Férfi"               
+                "valasz": "Férfi"
             },
             {
-                "valasz": "Nő"               
+                "valasz": "Nő"
             },
             {
-                "valasz": "Nem szeretném megadni"          
+                "valasz": "Nem szeretném megadni"
             },
             {
-                "valasz": "Egyéb"          
+                "valasz": "Egyéb"
             }
-        ], 
+        ],
         "megcsinalta": false,
         "valasztott": null
     },
@@ -104,18 +116,18 @@
         "kerdes": "Milyen jellegű településen él?",
         "valaszlehetosegek": [
             {
-                "valasz": "Nagyváros / városközpont"               
+                "valasz": "Főváros / Városközpont"
             },
             {
-                "valasz": "Külváros"               
+                "valasz": "Nagyváros / Megyeszékhely"
             },
             {
-                "valasz": "Kisváros"          
+                "valasz": "Kisváros"
             },
             {
-                "valasz": "Vidék / falu"          
+                "valasz": "Vidék / Falu"
             }
-        ], 
+        ],
         "megcsinalta": false,
         "valasztott": null
     },
@@ -124,47 +136,47 @@
         "kerdes": "Milyen korosztályba tartozik ?",
         "valaszlehetosegek": [
             {
-                "valasz": "18 év alatti"               
+                "valasz": "18 év alatti"
             },
             {
-                "valasz": "18-25 év"               
+                "valasz": "18-25 év"
             },
             {
-                "valasz": "26-35 év"          
+                "valasz": "26-35 év"
             },
             {
-                "valasz": "36-45 év"          
+                "valasz": "36-45 év"
             },
             {
-                "valasz": "46-60 év"          
+                "valasz": "46-60 év"
             },
             {
-                "valasz": "61 év és feljebb"          
+                "valasz": "61 év és feljebb"
             }
-        ], 
+        ],
         "megcsinalta": false,
         "valasztott": null
     },
     {
         "id": 8,
-        "kerdes": "Hogyan jellemezné az egészségi állapotát?",
+        "kerdes": "Hogyan jellemezné általános egészségi állapotát?",
         "valaszlehetosegek": [
             {
-                "valasz": "Kiváló"               
+                "valasz": "Kiváló (Energikus vagyok, ritkán vagyok beteg)"
             },
             {
-                "valasz": "Jó"               
+                "valasz": "Jó (Általában egészségesnek érzem magam)"
             },
             {
-                "valasz": "Közepes"          
+                "valasz": "Közepes / Átlagos"
             },
             {
-                "valasz": "Rossz"          
+                "valasz": "Rossz (Gyakori panaszok vagy betegségek)"
             },
             {
-                "valasz": "Nagyon rossz"          
+                "valasz": "Nagyon rossz"
             }
-        ], 
+        ],
         "megcsinalta": false,
         "valasztott": null
     },
@@ -173,21 +185,21 @@
         "kerdes": "Mi a legmagasabb iskolai végzettsége?",
         "valaszlehetosegek": [
             {
-                "valasz": "Általános iskola"               
+                "valasz": "Általános iskola"
             },
             {
-                "valasz": "Középiskola / érettségi"               
+                "valasz": "Középiskola / Érettségi"
             },
             {
-                "valasz": "Felsőfokú szakképzés"          
+                "valasz": "Felsőfokú szakképzés / Technikum"
             },
             {
-                "valasz": "Egyetem / főiskola"          
+                "valasz": "Egyetem / Főiskola"
             },
             {
-                "valasz": "Posztgraduális"          
+                "valasz": "Posztgraduális"
             }
-        ], 
+        ],
         "megcsinalta": false,
         "valasztott": null
     }
