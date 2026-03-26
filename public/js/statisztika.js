@@ -41,6 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
             var titlefelirat = document.createElement("h2");
             titlefelirat.className = "text-center d-flex justify-content-center align-items-center";
             titlefelirat.innerHTML = `${felirat[i]}`;
+            
             tartonbeluldiv.appendChild(titlefelirat);
 
             var chartCol = document.createElement("div");

@@ -33,6 +33,7 @@ const mereg_config1 = {
     data: mereg_data1,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: { labels: { color: 'white', font: { size: 16 } } }
         },
@@ -80,6 +81,7 @@ const mereg_config2 = {
     data: mereg_data2,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: { labels: { color: 'white', font: { size: 16 } } }
         },
@@ -123,6 +125,7 @@ const mereg_config3 = {
     data: mereg_data3,
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: { labels: { color: 'white', font: { size: 16 } } }
         },
