@@ -81,10 +81,10 @@ app.post('/kerdoiv', (req, res) => {
 
 
 app.get("/sitemap.xml", (req, res) => {
-  res.setHeader("Content-Type", "application/xml");
-  res.setHeader("Cache-Control", "public, max-age=86400");
-  res.removeHeader("Retry-After"); // fontos
-  res.sendFile(path.join(__dirname, "sitemap.xml"));
+    res.setHeader("Content-Type", "application/xml");
+    res.setHeader("Cache-Control", "public, max-age=86400");
+    res.removeHeader("Retry-After"); // fontos
+    res.sendFile(path.join(__dirname, "sitemap.xml"));
 });
 
 
@@ -105,28 +105,28 @@ app.get('/ajanlas/:kod', (req, res) => {
 
 //fooldal
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 //aloldalak
 app.get('/kerdoiv', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'kerdoiv.html'));
+    res.sendFile(path.join(__dirname, 'public', 'kerdoiv.html'));
 });
 
 app.get('/dokumentacio', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'dokumentacio.html'));
+    res.sendFile(path.join(__dirname, 'public', 'dokumentacio.html'));
 });
 app.get('/statisztikak', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'statisztikak.html'));
+    res.sendFile(path.join(__dirname, 'public', 'statisztikak.html'));
 });
 app.get('/tarsak', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'tarsak.html'));
+    res.sendFile(path.join(__dirname, 'public', 'tarsak.html'));
 });
 app.get('/ajanlas', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'ajanlas.html'));
+    res.sendFile(path.join(__dirname, 'public', 'ajanlas.html'));
 });
 app.get('/tudomanyhatter', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'tudomanyhatter.html'));
+    res.sendFile(path.join(__dirname, 'public', 'tudomanyhatter.html'));
 });
 
 app.get('/api/statisztika', (req, res) => {
@@ -145,6 +145,7 @@ app.get('/api/statisztika/kerdesek', (req, res) => {
 });
 
 const ajanl_kerd = require('./ajanlas_kerdesek');
+const add = require('./ajanlas_eredmenysamitas');
 
 app.get('/api/ajanlas_kerd', (req, res) => {
     // Csak a kérdést és a válaszlehetőségek szövegét küldjük el
@@ -164,19 +165,21 @@ app.get('/api/ajanlas_kerd', (req, res) => {
 app.post('/api/kiertekeles', async (req, res) => {
     try {
         const { meta, valaszok } = req.body;
-        const add = require('./ajanlas_eredmenysamitas');
+        
+        if (ValidalasAjanlas(valaszok)) {
+            
         const { vegeredmeny } = await add.Befejezes(meta, valaszok, pool)
-
         const query = 'INSERT INTO ajanlas (kod,jelzo, leiras,tanacs,status,bmi) VALUES (?,?,?,?,?,?)';
         const values = [vegeredmeny.kod, vegeredmeny.jelzo, vegeredmeny.leiras, vegeredmeny.tanacs, vegeredmeny.status, vegeredmeny.bmi];
 
-        if (ValidalasAjanlas(valaszok)) {
             pool.query(query, values, (err) => {
                 if (err) {
                     console.error("DB hiba:", err);
                     return res.status(500).json({ error: "Szerver oldali hiba történt." });
                 }
                 res.json({ status: 'ok', adatok: vegeredmeny });
+
+
             });
         } else {
             return res.status(400).json({ error: "Érvénytelen adatok" });
