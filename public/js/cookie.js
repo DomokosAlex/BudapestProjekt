@@ -5,9 +5,6 @@ function hasConsent() {
 }
 
 
-function loadAnalytics() {
-    //google cucc
-}
 
 function Banner() {
 
