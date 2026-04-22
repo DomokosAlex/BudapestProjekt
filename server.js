@@ -129,6 +129,15 @@ app.get('/tudomanyhatter', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'tudomanyhatter.html'));
 });
 
+app.get('/article/:id', (req, res) => {
+    
+    res.sendFile(path.join(__dirname, 'public', 'articles.html'));
+});
+
+app.get('/cikkek', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'cikkek.html'));
+});
+
 app.get('/api/statisztika', (req, res) => {
     pool.query('SELECT * FROM kerdoiv', (err, results) => {
         if (err) { console.error(err); return res.status(500).json({ error: "Szerver hiba" }); }
@@ -158,8 +167,6 @@ app.get('/api/ajanlas_kerd', (req, res) => {
     }));
     res.json(biztonsagosAdat);
 });
-
-
 
 
 app.post('/api/kiertekeles', async (req, res) => {
@@ -192,9 +199,6 @@ app.post('/api/kiertekeles', async (req, res) => {
 
 });
 
-
-
-
 app.get('/api/kerdoiv_kerd', (req, res) => {
     // Csak a kérdést és a válaszlehetőségek szövegét küldjük el
     const biztonsagosAdat = kerdesek_json.map(q => ({
@@ -206,7 +210,6 @@ app.get('/api/kerdoiv_kerd', (req, res) => {
     }));
     res.json(biztonsagosAdat);
 });
-
 
 const PORT = process.env.PORT || 3000;
 

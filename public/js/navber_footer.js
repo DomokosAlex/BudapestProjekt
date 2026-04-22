@@ -25,6 +25,7 @@ nav.innerHTML = `
 
                 <li class="nav-item"><a class="nav-link" href="./statisztikak"><span>Statisztika</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="./tudomanyhatter"><span>Források</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./cikkek"><span>Cikkek</span></a></li>
             </ul>
         </div>
     </div>
