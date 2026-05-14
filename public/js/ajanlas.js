@@ -203,7 +203,7 @@ currentIndex++;
 }
 function befejezes(){
      if (kerdesek_tomb.every(q => q.megcsinalta || q.valasztott !== null) && userMeta.nem.length>0 && userMeta.magassag>20 && userMeta.testsuly>20) {
-            alert("Lejebb görgetve megtekintheti az eredményét")
+          
             sendResultsToBackend();
             return;
         } else {
@@ -279,6 +279,8 @@ window.handleAjanlas = function (data) {
       </ul>
     </div>
   `;
+             location.href="#erdmeny";
+
 };
 
 document.getElementById('lekeres').addEventListener('click', () => {

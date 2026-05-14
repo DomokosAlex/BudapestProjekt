@@ -1,7 +1,5 @@
-
 const eredetiAdatok = require('./ajanlas_kerdesek.json');
 const vegeredmeny = {};
-
 
 function BMI_calculator(meta) {
     if (!meta.testsuly || !meta.magassag) return null;
@@ -72,19 +70,7 @@ async function Befejezes(meta, valasztasok, connection) {
     let jelzo_szin="";
     let tanacs = [];
 
-    // JAVÍTÁS: A 8-as kérdés válaszát a felhasználó válaszaiból keressük ki!
-    
-
-    
    
-        /*
-        jelzo_szin = "alert-danger";
-        status = "NEM JAVASOLT A PÓTLÁS (Egyéni Érzékenység)";
-        leiras = "A szervezetedben a glutamát-GABA egyensúly eltolódott (NMDA receptor túlérzékenység). A glicin izgató hatású lehet nálad.";
-        tanacs.push("Az általad tapasztalt rosszullét (szorongás/pörgés) miatt a tiszta glicin szedése TILOS.");
-        tanacs.push("Fókuszálj a Magnézium és B6-vitamin bevitelre.");
-        tanacs.push("Kizárólag természetes forrásból (hosszú főzésű húsleves) próbáld bevinni, óvatosan.");*/
-  
         if (user_ossz <= -40) {
             jelzo_szin = "alert-danger";
             status = "Kritikus Glicin-hiány";
@@ -96,14 +82,14 @@ async function Befejezes(meta, valasztasok, connection) {
             jelzo_szin = "alert-warning";
             status = "Funkcionális Hiány";
             leiras = "Nincs elég tartalék a regenerációhoz. Gyorsult öregedés, rossz alvás és gyenge ízületek jellemzik.";
-            tanacs.push("Próbálj 5–10 g napi glicint vagy kollagénport 1–2 hétig, és figyeld a változásokat.");
+            tanacs.push("Próbálj 5-10 g napi glicint vagy kollagénport 1-2 hétig, és figyeld a változásokat.");
             tanacs.push("Támogasd a rendszeredet több csontlevessel.");
 
         } else if (user_ossz >= -10 && user_ossz <= 20) {
             jelzo_szin = "alert-info";
             status = "Egyensúlyi (Fenntartó)";
             leiras = "A bevitel fedezi az alapvető szükségleteket, de stressz esetén hamar hiányállapot lép fel.";
-            tanacs.push("3–5 g/nap valószínűleg elegendő; tartsd a változatos fehérjebevitelt.");
+            tanacs.push("3-5 g/nap valószínűleg elegendő; tartsd a változatos fehérjebevitelt.");
             tanacs.push("Figyelj az alvásminőségre stresszes időszakokban.");
 
         } else if (user_ossz >= 21 && user_ossz <= 50) {
@@ -140,12 +126,7 @@ async function Befejezes(meta, valasztasok, connection) {
         bmi: bmi 
     };
 
-
-
     return { vegeredmeny }
 }
-
-
-
 
 module.exports = { Befejezes };

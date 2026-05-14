@@ -26,7 +26,7 @@ const connection = mysql.createConnection({
 */
 
 const pool = mysql.createPool({
-    host: "localhost",
+    host: 'localhost',
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
@@ -137,6 +137,18 @@ app.get('/article/:id', (req, res) => {
 app.get('/cikkek', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'cikkek.html'));
 });
+
+app.get('/glicinedesito', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'glicinedesito.html'));
+});
+
+
+app.get('/edzes_glic', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'edzes_glic.html'));
+});
+
+
+
 
 app.get('/api/statisztika', (req, res) => {
     pool.query('SELECT * FROM kerdoiv', (err, results) => {
