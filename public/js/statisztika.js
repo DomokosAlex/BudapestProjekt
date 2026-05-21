@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const kerdesekresponse = await fetch('/api/statisztika/kerdesek');
         const kerdesek = await kerdesekresponse.json();
 
+        document.getElementById("osszkit").textContent = `Össz kitöltések száma: ${data.length}`;
 
         const adatok = diagramadat(kerdesek, data)
 

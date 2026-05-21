@@ -65,28 +65,28 @@ function Elso_Oldal() {
 
                         <div class="modal-body text-justify">
                             <p>
-                                Mivel az L-Glicin szintjének laboratóriumi körülményeken kívüli meghatározására
-                                jelenleg
-                                nem létezik
-                                egységes iparági szabvány, ezért egy<b> saját fejlesztésű módszertant
-                                    alkalmazunk.</b>
-                            </p>
-                            <p>
-                                A számítás alapja egy elméleti modell: a bevitt tápanyagok és a szervezet
-                                valószínűsíthető felhasználása
-                                alapján<b> becsüljük meg a várható értékeket.</b>Ez a módszer nem mérés, hanem egy
-                                körülhatárolt becslés,
-                                amely segít eligazodni az életmódváltásban.
-                            </p>
-                            <hr>
-                            <p><b>Fontos figyelmeztetés:</b> Fontos: Ez a teszt egy belső fejlesztésű (in-house),
-                                nem
-                                diagnosztikai
-                                eljárás.<b> Az eredmény tájékoztató jellegű,</b> és nem helyettesíti a pontos
-                                laboratóriumi vérvizsgálatot
-                                vagy
-                                az orvosi konzultációt. Kérjük, az eredményeket ennek tudatában kezelje!
-                            </p>
+        Mivel az L-glicin szintjének laboratóriumi körülményeken kívüli meghatározására jelenleg nem létezik
+        egységes iparági szabvány, ezért egy <b>saját fejlesztésű módszertant alkalmazunk.</b>
+    </p>
+
+    <p>
+        A számítás alapja egy elméleti modell: a bevitt tápanyagok és a szervezet valószínűsíthető felhasználása
+        alapján <b>becsüljük meg a várható értékeket.</b> Ez a módszer nem mérés, hanem egy körülhatárolt becslés,
+        amely segít eligazodni az életmódváltásban.
+    </p>
+
+    <hr>
+
+    <p>
+        <b>Fontos figyelmeztetés:</b> Ez a teszt egy belső fejlesztésű (in-house), nem diagnosztikai eljárás.
+        <b>Az eredmény tájékoztató jellegű,</b> és nem helyettesíti a laboratóriumi vérvizsgálatot vagy az orvosi
+        konzultációt.
+    </p>
+
+    <p>
+        A teszt és a kérdőív kitöltése anonim módon történik, közvetlen személyes azonosításra alkalmas adatokat
+        (például név, e-mail cím vagy telefonszám) nem gyűjtünk.
+    </p>
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@ function kerdes_felteves(i) {
         </label>`;
     });
 
-   
+
 
     document.querySelectorAll('input[name="valasz"]').forEach(r => {
         r.addEventListener('change', (ev) => {
@@ -153,11 +153,11 @@ function kerdes_felteves(i) {
 
 function renderAll() {
     const root = document.getElementById("Kerdesek");
-    if(kerdesek_tomb.filter(n=> n.megcsinalta== true).length>= kerdesek_tomb.length-1 ){
-        szoveg="Befejezés";
-        irany="befejezes()";
+    if (kerdesek_tomb.filter(n => n.megcsinalta == true).length >= kerdesek_tomb.length - 1) {
+        szoveg = "Befejezés";
+        irany = "befejezes()";
     }
-    else{szoveg="Következő";irany="Kovetkezo()"}
+    else { szoveg = "Következő"; irany = "Kovetkezo()" }
     root.innerHTML = `
      <h1 id="cim" class=" mt-4 text-center p3 fs-2"></h1>
     <hr>
@@ -175,7 +175,7 @@ function navigacios_gomb() {
     const helyzet = document.getElementById("helyzet");
 
 
-    const kimutatas = (currentIndex == 0) ? "btn-success" : (userMeta.nem.length>0 && userMeta.magassag>0 && userMeta.testsuly>0) ? "btn-secondary" : "btn-warning";
+    const kimutatas = (currentIndex == 0) ? "btn-success" : (userMeta.nem.length > 0 && userMeta.magassag > 0 && userMeta.testsuly > 0) ? "btn-secondary" : "btn-warning";
     helyzet.innerHTML = `<button class="btn m-1  col-1 szam_gomb ${kimutatas}" onclick="ugras(0)">1</button>`;
 
     kerdesek_tomb.forEach(k => {
@@ -187,7 +187,7 @@ function navigacios_gomb() {
 }
 
 function Kovetkezo() {
-    if(currentIndex===0 && userMeta.nem.length>0 && userMeta.magassag>0 && userMeta.testsuly>0){
+    if (currentIndex === 0 && userMeta.nem.length > 0 && userMeta.magassag > 0 && userMeta.testsuly > 0) {
         currentIndex++;
         Betolt(currentIndex);
         return;
@@ -196,20 +196,20 @@ function Kovetkezo() {
     const selected = document.querySelector('input[name="valasz"]:checked');
     if (!selected) { return alert("Kérlek tölts ki a mezőt"); }
 
-    kerdesek_tomb[currentIndex-1].valasztott = parseInt(selected.value);
-    kerdesek_tomb[currentIndex-1].megcsinalta = true;
-currentIndex++;
+    kerdesek_tomb[currentIndex - 1].valasztott = parseInt(selected.value);
+    kerdesek_tomb[currentIndex - 1].megcsinalta = true;
+    currentIndex++;
     Betolt(currentIndex);
 }
-function befejezes(){
-     if (kerdesek_tomb.every(q => q.megcsinalta || q.valasztott !== null) && userMeta.nem.length>0 && userMeta.magassag>20 && userMeta.testsuly>20) {
-          
-            sendResultsToBackend();
-            return;
-        } else {
-            alert("Töltsd ki az összes kérdést a befejezéshez.");
-           
-        }
+function befejezes() {
+    if (kerdesek_tomb.every(q => q.megcsinalta || q.valasztott !== null) && userMeta.nem.length > 0 && userMeta.magassag > 20 && userMeta.testsuly > 20) {
+
+        sendResultsToBackend();
+        return;
+    } else {
+        alert("Töltsd ki az összes kérdést a befejezéshez.");
+
+    }
 }
 
 function Elozo() {
@@ -236,9 +236,9 @@ function sendResultsToBackend() {
             id: q.id,
             valasztott: q.valasztott
         }))
-       
+
     };
- console.log(bekuldeniValo)
+    console.log(bekuldeniValo)
     fetch('/api/kiertekeles', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -279,7 +279,7 @@ window.handleAjanlas = function (data) {
       </ul>
     </div>
   `;
-             location.href="#erdmeny";
+    location.href = "#erdmeny";
 
 };
 
