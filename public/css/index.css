@@ -106,3 +106,13 @@ main {
   list-style: none;
 
 }
+.dropdown-menu {
+    max-width: 300px;       
+    white-space: normal;     
+    word-break: break-word; 
+}
+
+.dropdown-item {
+    white-space: normal;
+    word-wrap: break-word;
+}

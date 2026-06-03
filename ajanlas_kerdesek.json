@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "szoveg": "Milyen korosztályba tartozik ?",
+        "szoveg": "Milyen korosztályba tartozik?",
         "valaszok": [
             {
                 "ker": "18 év alatti",
